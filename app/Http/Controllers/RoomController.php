@@ -10,4 +10,9 @@ class RoomController extends Controller
     {
         return view('rooms.standard');
     }
+
+    public function lux()
+    {
+        return view('rooms.lux');
+    }
 }
