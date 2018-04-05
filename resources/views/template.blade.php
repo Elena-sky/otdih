@@ -23,6 +23,25 @@
 </head>
 <body id="top">
 
+<div class="wrapper row0">
+    <div id="topbar" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <div class="fl_left">
+            <ul class="nospace">
+                <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+                <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+            </ul>
+        </div>
+        <div class="fl_right">
+            <ul class="nospace">
+                <li><a href="/"><i class="fa fa-lg fa-home"></i></a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+        <!-- ################################################################################################ -->
+    </div>
+</div>
+
 <!-- Top Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url({{ asset("images/backgrounds/main.jpg") }});">
     <!--  -->
@@ -34,7 +53,7 @@
             </div>
             <nav id="mainav" class="fl_right">
                 <ul class="clear">
-                    <li class="active"><a href="/"><i class="fa fa-lg fa-home"></i></a></li>
+                    {{--<li class="active"><a href="/">Главная</a></li>--}}
                     <li><a class="drop" href="#">Номера</a>
                         <ul>
                             <li><a href="{{ route('roomsStandard') }}">Стандарт</a>
@@ -65,8 +84,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="#">new</a></li>
-                    <li><a href="#">new</a></li>
+                    <li><a href="{{ route('reservation') }}">Бронирование</a></li>
                 </ul>
             </nav>
             <!-- -->
@@ -162,9 +180,8 @@
     <nav class="quicklinks row4">
         <ul class="hoc clear">
             <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
-            <li><a href="#">О нас</a></li>
             <li><a href="#">Контакты</a></li>
-            <li><a href="#">Бронирование</a></li>
+            <li><a href="{{ route('reservation') }}">Бронирование</a></li>
         </ul>
     </nav>
     <!--  -->
