@@ -20,3 +20,7 @@ Route::get('/room/standard', 'RoomController@standard')->name('roomsStandard');
 Route::get('/room/lux', 'RoomController@lux')->name('roomsLux');
 
 Route::get('/reservation', 'MainController@reservationPage')->name('reservation');
+
+
+
+Route::get('/house/3rooms/fishing', 'HouseController@houseFishing')->name('houseFishing');

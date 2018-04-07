@@ -30,8 +30,8 @@
         <!-- ################################################################################################ -->
         <div class="fl_left">
             <ul class="nospace">
-                <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
-                <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+                <li><i class="fa fa-phone"></i> +38(097)95 61 097</li>
+                <li><i class="fa fa-phone"></i>  +38(093)91 01 377</li>
             </ul>
         </div>
         <div class="fl_right">
@@ -80,8 +80,8 @@
                             </li>
                             <li><a class="drop" href="#">3 комнатные</a>
                                 <ul>
+                                    <li><a href="{{ route('houseFishing') }}">Рыбачья</a></li>
                                     <li><a href="#">Набережная</a></li>
-                                    <li><a href="#">Рыбачья</a></li>
                                 </ul>
                             </li>
                         </ul>
