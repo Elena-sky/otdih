@@ -19,7 +19,7 @@
                     </li>
                     <li><a href="">2 комнатные</a>
                         <ul>
-                            <li><a href="#">Салатовый</a></li>
+                            <li><a href="{{ route('houseLime') }}">Салатовый</a></li>
                             <li><a href="#">Сиреневый</a></li>
                         </ul>
                     </li>

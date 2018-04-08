@@ -8,6 +8,15 @@ class HouseController extends Controller
 {
 
 
+    // Display 2-rooms houses
+
+
+    public function lime()
+    {
+        return view('houses.2rooms.lime');
+    }
+
+
     // Display 3-rooms houses
     public function fishing()
     {
@@ -19,4 +28,6 @@ class HouseController extends Controller
     {
         return view('houses.3rooms.coast');
     }
+
+
 }
