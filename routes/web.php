@@ -23,7 +23,10 @@ Route::get('/reservation', 'MainController@reservationPage')->name('reservation'
 
 
 
-Route::get('/house/3rooms/lime', 'HouseController@lime')->name('houseLime');
+
+Route::get('/house/2rooms/lilac', 'HouseController@lilac')->name('houseLilac');
+
+Route::get('/house/2rooms/lime', 'HouseController@lime')->name('houseLime');
 
 
 Route::get('/house/3rooms/fishing', 'HouseController@fishing')->name('houseFishing');

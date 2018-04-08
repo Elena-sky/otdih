@@ -20,7 +20,7 @@
                     <li><a href="">2 комнатные</a>
                         <ul>
                             <li><a href="{{ route('houseLime') }}">Салатовый</a></li>
-                            <li><a href="#">Сиреневый</a></li>
+                            <li><a href="{{ route('houseLilac') }}">Сиреневый</a></li>
                         </ul>
                     </li>
                     <li><a href="">3 комнатные</a>

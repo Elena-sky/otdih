@@ -16,6 +16,11 @@ class HouseController extends Controller
         return view('houses.2rooms.lime');
     }
 
+    public function lilac()
+    {
+        return view('houses.2rooms.lilac');
+    }
+
 
     // Display 3-rooms houses
     public function fishing()

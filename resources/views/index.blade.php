@@ -77,7 +77,7 @@
                     </article>
                 </li>
                 <li class="one_third">
-                    <article><i class="fa fa-coffee"></i>
+                    <article><i class="fa fa-cutlery"></i>
                         <h6 class="heading">Кафе</h6>
                         <p>Рядом 2 КАФЕ (3 минуты пешом) с комплексными обедами</p>
                     </article>
