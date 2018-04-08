@@ -69,7 +69,7 @@
                             <li><a class="drop" href="#">1 комнатные</a>
                                 <ul>
                                     <li><a href="#">Розовый</a></li>
-                                    <li><a href="#">Зеленый</a></li>
+                                    <li><a href="{{ route('houseGreen') }}">Зеленый</a></li>
                                 </ul>
                             </li>
                             <li><a class="drop" href="#">2 комнатные</a>

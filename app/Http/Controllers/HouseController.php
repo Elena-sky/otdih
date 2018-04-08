@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 
 class HouseController extends Controller
 {
-
+    // Display 1-rooms houses
+    public function green()
+    {
+        return view('houses.1rooms.green');
+    }
 
     // Display 2-rooms houses
-
-
     public function lime()
     {
         return view('houses.2rooms.lime');
