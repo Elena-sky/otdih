@@ -88,17 +88,17 @@
 
                         <img src="{{ asset("images/rooms/lux/6.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/lux/4.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/lu-st/4.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/lux/8.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/lu-st/8.jpg") }}" alt="">
 
                         <img src="{{ asset("images/rooms/lux/3.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/lux/9.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/lu-st/9.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/lux/10.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/lu-st/10.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/lux/11.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/lu-st/11.jpg") }}" alt="">
 
                         <img src="{{ asset("images/rooms/lux/7.jpg") }}" alt="">
 

@@ -88,23 +88,23 @@
 
                         <img src="{{ asset("images/rooms/standard/2.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/standard/4.jpg") }}" alt="">
-
                         <img src="{{ asset("images/rooms/standard/3.jpg") }}" alt="">
 
                         <img src="{{ asset("images/rooms/standard/5.jpg") }}" alt="">
+
+                        <img src="{{ asset("images/rooms/lu-st/11.jpg") }}" alt="">
 
                         <img src="{{ asset("images/rooms/standard/6.jpg") }}" alt="">
 
                         <img src="{{ asset("images/rooms/standard/7.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/standard/11.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/lu-st/4.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/standard/8.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/lu-st/8.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/standard/9.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/lu-st/9.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/standard/10.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/lu-st/10.jpg") }}" alt="">
 
                     </div>
 

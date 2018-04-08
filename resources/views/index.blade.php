@@ -109,7 +109,7 @@
             </div>
 
             <div class="center btmspace-80">
-                <h3 class="heading">Наш поселок</h3>
+                <h3 class="heading">Любимая Крыжановка</h3>
 
                 <!-- Gallery -->
                 <div class="col-md-12 row">
@@ -138,8 +138,6 @@
 
                         <img src="{{ asset("images/territory/10.jpeg") }}" alt="">
 
-                        <img src="{{ asset("images/territory/11.jpeg") }}" alt="">
-
                         <img src="{{ asset("images/territory/12.jpeg") }}" alt="">
 
                         <img src="{{ asset("images/territory/13.jpeg") }}" alt="">
@@ -164,8 +162,8 @@
         <article class="hoc container center">
             <!-- -->
             <i class="block btmspace-50 fa fa-4x fa-street-view"></i>
-            <h6>Massa et tellus placerat et</h6>
-            <p class="btmspace-50">Condimentum ex dictum fusce commodo nisi sed sagittis dignissim vivamus diam</p>
+            <h6>Контактная форма</h6>
+            <p class="btmspace-50">Напишите нам</p>
             <footer><a class="btn inverse" href="#">Convallis pharetra</a></footer>
             <!-- -->
         </article>
@@ -227,6 +225,11 @@
                         <img src="{{ asset("images/sea/11.jpg") }}" alt="">
 
                         <img src="{{ asset("images/beach/8.jpg") }}" alt="">
+
+                        <img src="{{ asset("images/sea/12.png") }}" alt="">
+
+                        <img src="{{ asset("images/sea/13.jpg") }}" alt="">
+
 
                     </div>
 
