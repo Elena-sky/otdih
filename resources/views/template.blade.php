@@ -81,7 +81,7 @@
                             <li><a class="drop" href="#">3 комнатные</a>
                                 <ul>
                                     <li><a href="{{ route('houseFishing') }}">Рыбачья</a></li>
-                                    <li><a href="#">Набережная</a></li>
+                                    <li><a href="{{ route('houseCoast') }}">Набережная</a></li>
                                 </ul>
                             </li>
                         </ul>

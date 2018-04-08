@@ -23,4 +23,6 @@ Route::get('/reservation', 'MainController@reservationPage')->name('reservation'
 
 
 
-Route::get('/house/3rooms/fishing', 'HouseController@houseFishing')->name('houseFishing');
+Route::get('/house/3rooms/fishing', 'HouseController@fishing')->name('houseFishing');
+
+Route::get('/house/3rooms/coast', 'HouseController@coast')->name('houseCoast');

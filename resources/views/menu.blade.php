@@ -11,22 +11,22 @@
             </li>
             <li><a href="#">Домики</a>
                 <ul>
-                    <li><a href="#">1 комнатные</a>
+                    <li><a href="">1 комнатные</a>
                         <ul>
                             <li><a href="#">Розовый </a></li>
                             <li><a href="#">Зеленый</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">2 комнатные</a>
+                    <li><a href="">2 комнатные</a>
                         <ul>
                             <li><a href="#">Салатовый</a></li>
                             <li><a href="#">Сиреневый</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">3 комнатные</a>
+                    <li><a href="">3 комнатные</a>
                         <ul>
                             <li><a href="{{ route('houseFishing') }}">Рыбачья</a></li>
-                            <li><a href="#">Набережная</a></li>
+                            <li><a href="{{ route('houseCoast') }}">Набережная</a></li>
                         </ul>
                     </li>
                 </ul>
