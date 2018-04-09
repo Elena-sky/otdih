@@ -80,17 +80,25 @@
 
                     <div class="gal">
 
-                        <img src="{{ asset("images/rooms/mansard/1.jpeg") }}" alt="">
+                        <img src="{{ asset("images/rooms/mansard/1.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/mansard/2.jpeg") }}" alt="">
+                        <img src="{{ asset("images/rooms/mansard/2.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/mansard/3.jpeg") }}" alt="">
+                        <img src="{{ asset("images/rooms/mansard/5.jpg") }}" alt="">
+
+                        <img src="{{ asset("images/rooms/mansard/3.jpg") }}" alt="">
 
                         <img src="{{ asset("images/rooms/mansard/4.jpeg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/mansard/5.jpeg") }}" alt="">
+                        <img src="{{ asset("images/rooms/lu-st/4.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/mansard/6.jpeg") }}" alt="">
+                        <img src="{{ asset("images/rooms/lu-st/9.jpg") }}" alt="">
+
+                        <img src="{{ asset("images/rooms/lu-st/8.jpg") }}" alt="">
+
+                        <img src="{{ asset("images/rooms/lu-st/10.jpg") }}" alt="">
+
+                        <img src="{{ asset("images/rooms/lu-st/11.jpg") }}" alt="">
 
                     </div>
 
