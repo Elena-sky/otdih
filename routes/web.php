@@ -22,6 +22,9 @@ Route::get('/room/lux', 'RoomController@lux')->name('roomsLux');
 Route::get('/reservation', 'MainController@reservationPage')->name('reservation');
 
 
+
+Route::get('/house/1rooms/pink', 'HouseController@pink')->name('housePink');
+
 Route::get('/house/1rooms/green', 'HouseController@green')->name('houseGreen');
 
 

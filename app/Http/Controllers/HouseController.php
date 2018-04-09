@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 class HouseController extends Controller
 {
     // Display 1-rooms houses
+    public function pink()
+    {
+        return view('houses.1rooms.pink');
+    }
+
     public function green()
     {
         return view('houses.1rooms.green');
