@@ -62,6 +62,8 @@
                             </li>
                             <li><a href="{{ route('roomsLux') }}">Люкс</a>
                             </li>
+                            <li><a href="{{ route('roomsMansard') }}">Мансарда</a>
+                            </li>
                         </ul>
                     </li>
                     <li><a class="drop" href="#">Домики</a>

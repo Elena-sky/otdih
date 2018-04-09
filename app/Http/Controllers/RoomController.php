@@ -15,4 +15,9 @@ class RoomController extends Controller
     {
         return view('rooms.lux');
     }
+
+    public function mansard()
+    {
+        return view('rooms.mansard');
+    }
 }

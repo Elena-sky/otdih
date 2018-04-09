@@ -14,12 +14,14 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/reservation', 'MainController@reservationPage')->name('reservation');
 
 Route::get('/room/standard', 'RoomController@standard')->name('roomsStandard');
 
 Route::get('/room/lux', 'RoomController@lux')->name('roomsLux');
 
-Route::get('/reservation', 'MainController@reservationPage')->name('reservation');
+Route::get('/room/mansard', 'RoomController@mansard')->name('roomsMansard');
+
 
 
 

@@ -7,13 +7,14 @@
                 <ul>
                     <li><a href="{{ route('roomsStandard') }}">Стандарт</a></li>
                     <li><a href="{{ route('roomsLux') }}">Люкс</a></li>
+                    <li><a href="{{ route('roomsMansard') }}">Мансарда</a></li>
                 </ul>
             </li>
             <li><a href="#">Домики</a>
                 <ul>
                     <li><a href="">1 комнатные</a>
                         <ul>
-                            <li><a href="#">Розовый </a></li>
+                            <li><a href="{{ route('housePink') }}">Розовый </a></li>
                             <li><a href="{{ route('houseGreen') }}">Зеленый</a></li>
                         </ul>
                     </li>
@@ -31,7 +32,7 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="#">Бронирование</a></li>
+            <li><a href="{{ route('reservation') }}">Бронирование</a></li>
 
         </ul>
     </nav>
@@ -40,7 +41,7 @@
         <h6>Контакты</h6>
         <address>
             Одесса<br>
-            п-к Крыжановка<br>
+            остановка Крыжановка<br>
             ул. Набережная<br>
 
             5 минут к морю<br>
