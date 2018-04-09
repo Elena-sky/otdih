@@ -20,6 +20,8 @@ Route::get('/room/standard', 'RoomController@standard')->name('roomsStandard');
 
 Route::get('/room/lux', 'RoomController@lux')->name('roomsLux');
 
+Route::get('/room/luxPlus', 'RoomController@luxPlus')->name('roomsLuxPlus');
+
 Route::get('/room/mansard', 'RoomController@mansard')->name('roomsMansard');
 
 

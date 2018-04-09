@@ -7,6 +7,7 @@
                 <ul>
                     <li><a href="{{ route('roomsStandard') }}">Стандарт</a></li>
                     <li><a href="{{ route('roomsLux') }}">Люкс</a></li>
+                    <li><a href="{{ route('roomsLuxPlus') }}">Люкс с балконом</a></li>
                     <li><a href="{{ route('roomsMansard') }}">Мансарда</a></li>
                 </ul>
             </li>

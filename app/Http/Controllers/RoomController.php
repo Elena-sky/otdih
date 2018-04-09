@@ -16,6 +16,12 @@ class RoomController extends Controller
         return view('rooms.lux');
     }
 
+    public function luxPlus()
+    {
+        return view('rooms.luxPlus');
+    }
+
+
     public function mansard()
     {
         return view('rooms.mansard');
