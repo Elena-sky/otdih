@@ -37,7 +37,7 @@
         <div class="fl_right">
             <ul class="nospace">
                 <li><a href="/"><i class="fa fa-lg fa-home"></i></a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="{{ route('contactsPage') }}">Контакты</a></li>
             </ul>
         </div>
         <!-- ################################################################################################ -->
@@ -186,7 +186,7 @@
     <nav class="quicklinks row4">
         <ul class="hoc clear">
             <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a href="{{ route('contactsPage') }}">Контакты</a></li>
             <li><a href="{{ route('reservation') }}">Бронирование</a></li>
         </ul>
     </nav>

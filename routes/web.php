@@ -14,6 +14,11 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/contacts', 'MainController@contacts')->name('contactsPage');
+
+Route::post('/contacts/send', 'MainController@sendMail')->name('mailSend');
+
 Route::get('/reservation', 'MainController@reservationPage')->name('reservation');
 
 Route::get('/room/standard', 'RoomController@standard')->name('roomsStandard');
