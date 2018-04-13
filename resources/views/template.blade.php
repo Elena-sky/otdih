@@ -38,6 +38,7 @@
             <ul class="nospace">
                 <li><a href="/"><i class="fa fa-lg fa-home"></i></a></li>
                 <li><a href="{{ route('contactsPage') }}">Контакты</a></li>
+                <li><a href="{{ route('aboutPage') }}">О нас</a></li>
             </ul>
         </div>
         <!-- ################################################################################################ -->
@@ -187,6 +188,7 @@
         <ul class="hoc clear">
             <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
             <li><a href="{{ route('contactsPage') }}">Контакты</a></li>
+            <li><a href="{{ route('aboutPage') }}">О нас</a></li>
             <li><a href="{{ route('reservation') }}">Бронирование</a></li>
         </ul>
     </nav>

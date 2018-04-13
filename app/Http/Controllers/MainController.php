@@ -34,4 +34,9 @@ class MainController extends Controller
 
     }
 
+    public function about()
+    {
+        return view('other.about');
+    }
+
 }

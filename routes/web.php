@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 Route::get('/contacts', 'MainController@contacts')->name('contactsPage');
 
+Route::get('/about', 'MainController@about')->name('aboutPage');
+
+
 Route::post('/contacts/send', 'MainController@sendMail')->name('mailSend');
 
 Route::get('/reservation', 'MainController@reservationPage')->name('reservation');
