@@ -104,26 +104,23 @@
             <ul class="slides">
                 <li>
                     <article>
-                        <p>Habitasse</p>
-                        <h3 class="heading">Aenean viverra arcu</h3>
-                        <p>Mi vitae condimentum sapien phasellus</p>
-                        <footer><a class="btn" href="#">Accumsan elementum</a></footer>
+                        <h3 class="heading">Подобрать номер</h3>
+                        <p>Выбрать номер легко и быстро! </p>
+                        <footer><a class="btn" href="#">подобрать</a></footer>
                     </article>
                 </li>
                 <li>
                     <article>
-                        <p>Suscipit</p>
-                        <h3 class="heading">Maecenas felis risus</h3>
-                        <p>Feugiat eu libero rhoncus laoreet congue</p>
-                        <footer><a class="btn inverse" href="#">Ante aenean</a></footer>
+                        <h3 class="heading">Свяжитесь с нами</h3>
+                        <p>Есть вопросы? Не стесняйтесь, напишите нам ! )</p>
+                        <footer><a class="btn" href="{{ route('contactsPage') }}">задать вопрос</a></footer>
                     </article>
                 </li>
                 <li>
                     <article>
-                        <p>Dictumst</p>
-                        <h3 class="heading">Amet sodales odio</h3>
-                        <p>In hac platea fusce eu rutrum nisi amet</p>
-                        <footer><a class="btn" href="#">Turpis in diam</a></footer>
+                        <h3 class="heading">Бронирование</h3>
+                        <p>Спланируйте свой отдых заранее =)</p>
+                        <footer><a class="btn" href="{{ route('reservation') }}">детальнее</a></footer>
                     </article>
                 </li>
             </ul>
@@ -199,8 +196,8 @@
     <div class="wrapper row5">
         <div id="copyright" class="hoc clear">
             <!--  -->
-            <p class="fl_left">Copyright &copy; 2018 - Alena Soroka</p>
-            <p class="fl_right">Site by otdih.od.ua</p>
+            <p class="fl_left">Copyright &copy; 2018 - otdih.od.ua</p>
+            <p class="fl_right">Site by Alena Soroka</p>
             <!--  -->
         </div>
     </div>
