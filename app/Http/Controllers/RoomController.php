@@ -6,24 +6,16 @@ use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
-    public function standard()
+
+    /**
+     * Display page of the room
+     *
+     * @param $type
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function room($type)
     {
-        return view('rooms.standard');
+        return view('rooms.'.$type);
     }
 
-    public function lux()
-    {
-        return view('rooms.lux');
-    }
-
-    public function luxPlus()
-    {
-        return view('rooms.luxPlus');
-    }
-
-
-    public function mansard()
-    {
-        return view('rooms.mansard');
-    }
 }

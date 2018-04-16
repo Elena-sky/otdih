@@ -23,33 +23,12 @@ Route::get('/choice', 'MainController@choice')->name('choicePage');
 
 Route::post('/choice/answer', 'MainController@answer');
 
-
-
 Route::post('/contacts/send', 'MainController@sendMail')->name('mailSend'); // письма
 
 Route::get('/reservation', 'MainController@reservationPage')->name('reservation'); // бронирование
 
-Route::get('/room/standard', 'RoomController@standard')->name('roomsStandard'); // стандарт
 
-Route::get('/room/lux', 'RoomController@lux')->name('roomsLux'); // люкс
-
-Route::get('/room/luxPlus', 'RoomController@luxPlus')->name('roomsLuxPlus'); // люкс балкон
-
-Route::get('/room/mansard', 'RoomController@mansard')->name('roomsMansard'); // мансарда
+Route::get('/room/{a}', 'RoomController@room')->name('rooms'); // страница номера
 
 
-
-
-Route::get('/house/1rooms/pink', 'HouseController@pink')->name('housePink'); // 1к домик
-
-Route::get('/house/1rooms/green', 'HouseController@green')->name('houseGreen'); //1к домик
-
-
-Route::get('/house/2rooms/lilac', 'HouseController@lilac')->name('houseLilac'); //2к домик
-
-Route::get('/house/2rooms/lime', 'HouseController@lime')->name('houseLime'); //2к домик
-
-
-Route::get('/house/3rooms/fishing', 'HouseController@fishing')->name('houseFishing'); //3к домик
-
-Route::get('/house/3rooms/coast', 'HouseController@coast')->name('houseCoast'); //3к домик
+Route::get('/house/{a}', 'HouseController@house')->name('houses'); // страница домика

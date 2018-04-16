@@ -59,13 +59,13 @@
                     {{--<li class="active"><a href="/">Главная</a></li>--}}
                     <li><a class="drop" href="#">Номера</a>
                         <ul>
-                            <li><a href="{{ route('roomsStandard') }}">Стандарт</a>
+                            <li><a href="{{ route('rooms', 'standard') }}">Стандарт</a>
                             </li>
-                            <li><a href="{{ route('roomsLux') }}">Люкс</a>
+                            <li><a href="{{ route('rooms', 'lux') }}">Люкс</a>
                             </li>
-                            <li><a href="{{ route('roomsLuxPlus') }}">Люкс с балконом</a>
+                            <li><a href="{{ route('rooms', 'luxPlus') }}">Люкс с балконом</a>
                             </li>
-                            <li><a href="{{ route('roomsMansard') }}">Мансарда</a>
+                            <li><a href="{{ route('rooms', 'mansard') }}">Мансарда</a>
                             </li>
                         </ul>
                     </li>
@@ -73,20 +73,20 @@
                         <ul>
                             <li><a class="drop" href="#">1 комнатные</a>
                                 <ul>
-                                    <li><a href="{{ route('housePink') }}">Розовый</a></li>
-                                    <li><a href="{{ route('houseGreen') }}">Зеленый</a></li>
+                                    <li><a href="{{ route('houses', 'pink') }}">Розовый</a></li>
+                                    <li><a href="{{ route('houses', 'green') }}">Зеленый</a></li>
                                 </ul>
                             </li>
                             <li><a class="drop" href="#">2 комнатные</a>
                                 <ul>
-                                    <li><a href="{{ route('houseLime') }}">Салатовый</a></li>
-                                    <li><a href="{{ route('houseLilac') }}">Сиреневый</a></li>
+                                    <li><a href="{{ route('houses', 'lime') }}">Салатовый</a></li>
+                                    <li><a href="{{ route('houses', 'lilac') }}">Сиреневый</a></li>
                                 </ul>
                             </li>
                             <li><a class="drop" href="#">3 комнатные</a>
                                 <ul>
-                                    <li><a href="{{ route('houseFishing') }}">Рыбачья</a></li>
-                                    <li><a href="{{ route('houseCoast') }}">Набережная</a></li>
+                                    <li><a href="{{ route('houses', 'fishing') }}">Рыбачья</a></li>
+                                    <li><a href="{{ route('houses', 'coast') }}">Набережная</a></li>
                                 </ul>
                             </li>
                         </ul>
