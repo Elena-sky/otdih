@@ -30,7 +30,7 @@
                 <h6 class="nospace">Подобрать номер</h6>
                 <p class="nospace">Мы можем помочь вам подобрать наиболее подходящий номер</p>
             </div>
-            <footer class="one_quarter"><a class="btn" href="#">Детальнее &raquo;</a></footer>
+            <footer class="one_quarter"><a class="btn" href="{{ route('choicePage') }}">Детальнее &raquo;</a></footer>
             <!-- -->
         </article>
     </div>
@@ -166,7 +166,7 @@
             <i class="block btmspace-50 fa fa-4x fa-street-view"></i>
             <h6>Контактная форма</h6>
             <p class="btmspace-50">Напишите нам</p>
-            <footer><a class="btn inverse" href="#">Convallis pharetra</a></footer>
+            <footer><a class="btn inverse" href="{{ route('contactsPage') }}">написать </a></footer>
             <!-- -->
         </article>
     </div>
