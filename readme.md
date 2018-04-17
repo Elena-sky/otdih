@@ -1,7 +1,10 @@
 ## Recreation
- 
+ This is site about renting out rooms and houses. 
+  It offer accommodation near the sea in Odessa. 
+  Clients can see variants the rooms, photos of locality. 
+  Implemented contact form and help in choosing a room.
 
-## Demo: 
+## Demo: http://otdih.od.ua/ 
 
 
 ## Tools:
