@@ -49,25 +49,25 @@
                     <div class="variant">
 
                         <div class="std varR roomsV standard">
-                            <a href="{{ route('roomsStandard') }}">
+                            <a href="{{ route('rooms', 'standard') }}">
                                 <span class="fa fa-key"></span> Стандарт
                             </a>
                         </div>
 
                         <div class="std varR roomsV standard">
-                             <a href="{{ route('roomsMansard') }}">
+                             <a href="{{ route('rooms', 'mansard') }}">
                                 <span class="fa fa-key"></span> Мансарда
                             </a>
                         </div>
 
                         <div class="std varR roomsV lux">
-                            <a href="{{ route('roomsLux') }}">
+                            <a href="{{ route('rooms', 'lux') }}">
                                 <span class="fa fa-key"></span> Люкс
                             </a>
                         </div>
 
                         <div class="std varR roomsV luxPlus">
-                            <a href="{{ route('roomsLuxPlus') }}">
+                            <a href="{{ route('rooms', 'luxPlus') }}">
                                 <span class="fa fa-key"></span> Люкс балкон
                             </a>
                         </div>
@@ -75,10 +75,10 @@
                         <div class="std varR roomsV house1">
                             <span class="fa fa-key"></span> 1 комнатный домик
                             <ul>
-                                <a href="{{ route('housePink') }}">
+                                <a href="{{ route('houses', 'pink') }}">
                                     <li>Розовый</li>
                                 </a>
-                                <a href="{{ route('houseGreen') }}">
+                                <a href="{{ route('houses', 'green') }}">
                                     <li>Зеленый</li>
                                 </a>
                             </ul>
@@ -87,20 +87,20 @@
                         <div class="std varR roomsV house2">
                             <span class="fa fa-key"></span> 2 комнатный домик
                             <ul>
-                                <a href="{{ route('houseLilac') }}">
+                                <a href="{{ route('houses', 'lilac') }}">
                                     <li>Сиреневый</li>
                                 </a>
-                                <a href="{{ route('houseLime') }}">
+                                <a href="{{ route('houses', 'lime') }}">
                                     <li>Салатовый</li>
                                 </a>
                             </ul>
 
                             <span class="fa fa-key"></span> 3 комнатный домик
                             <ul>
-                                <a href="{{ route('houseFishing') }}">
+                                <a href="{{ route('houses', 'fishing') }}">
                                     <li>Рыбачья</li>
                                 </a>
-                                <a href="{{ route('houseCoast') }}">
+                                <a href="{{ route('houses', 'coast') }}">
                                     <li>Набережная</li>
                                 </a>
                             </ul>

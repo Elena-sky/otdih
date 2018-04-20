@@ -196,8 +196,8 @@
     <div class="wrapper row5">
         <div id="copyright" class="hoc clear">
             <!--  -->
-            <p class="fl_left">Copyright &copy; 2018 - otdih.od.ua</p>
-            <p class="fl_right">Site by Alena Soroka</p>
+            <p class="fl_left">Copyright &copy; 2018 - Alena Soroka</p>
+            <p class="fl_right">Site by otdih.od.ua</p>
             <!--  -->
         </div>
     </div>
