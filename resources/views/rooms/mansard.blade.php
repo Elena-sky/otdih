@@ -80,13 +80,13 @@
 
                     <div class="gal">
 
-                        <img src="{{ asset("images/rooms/mansard/1.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/mansard/1.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/mansard/2.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/mansard/2.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/mansard/5.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/mansard/5.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/mansard/3.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/mansard/3.JPG") }}" alt="">
 
                         <img src="{{ asset("images/rooms/mansard/4.jpeg") }}" alt="">
 

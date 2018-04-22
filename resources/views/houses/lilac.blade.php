@@ -92,7 +92,7 @@
 
                     <div class="gal">
 
-                        <img src="{{ asset("images/homes/lilac/1.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/lilac/1.JPG") }}" alt="">
 
                         <img src="{{ asset("images/homes/lilac/2.jpg") }}" alt="">
 
@@ -106,15 +106,15 @@
 
                         <img src="{{ asset("images/homes/lilac/7.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/homes/lilac/8.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/lilac/8.JPG") }}" alt="">
 
                         <img src="{{ asset("images/homes/lilac/9.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/homes/lilac/10.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/lilac/10.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/homes/lilac/11.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/lilac/11.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/homes/lilac/12.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/lilac/12.JPG") }}" alt="">
 
                         <img src="{{ asset("images/homes/lilac/13.jpg") }}" alt="">
 

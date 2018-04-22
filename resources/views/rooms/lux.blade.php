@@ -84,9 +84,9 @@
 
                         <img src="{{ asset("images/rooms/lux/2.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/lux/5.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/lux/5.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/rooms/lux/6.jpg") }}" alt="">
+                        <img src="{{ asset("images/rooms/lux/6.JPG") }}" alt="">
 
                         <img src="{{ asset("images/rooms/lu-st/4.jpg") }}" alt="">
 

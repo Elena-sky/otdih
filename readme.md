@@ -4,7 +4,7 @@
   Clients can see variants the rooms, photos of locality. 
   Implemented contact form and help in choosing a room.
 
-## Demo: http://otdih.01g.info
+## Demo: http://otdih.od.ua
 
 
 ## Tools:

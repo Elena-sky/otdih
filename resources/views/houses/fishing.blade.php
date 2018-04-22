@@ -112,47 +112,47 @@
 
                         <img src="{{ asset("images/homes/fishing/1.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/2.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/2.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/3.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/3.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/4.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/4.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/5.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/5.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/6.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/6.JPG") }}" alt="">
 
                         <img src="{{ asset("images/homes/fishing/26.jpeg") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/7.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/7.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/8.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/8.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/9.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/9.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/10.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/10.JPG") }}" alt="">
 
                         <img src="{{ asset("images/homes/fishing/11.jpg") }}" alt="">
 
                         <img src="{{ asset("images/homes/fishing/12.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/13.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/13.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/14.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/14.JPG") }}" alt="">
 
                         <img src="{{ asset("images/homes/fishing/15.jpeg") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/16.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/16.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/17.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/17.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/18.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/18.JPG") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/19.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/19.JPG") }}" alt="">
 
                         <img src="{{ asset("images/homes/fishing/20.jpg") }}" alt="">
 
-                        <img src="{{ asset("images/homes/fishing/21.jpg") }}" alt="">
+                        <img src="{{ asset("images/homes/fishing/21.JPG") }}" alt="">
 
                         <img src="{{ asset("images/homes/fishing/22.jpg") }}" alt="">
 
