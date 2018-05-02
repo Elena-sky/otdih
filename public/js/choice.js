@@ -22,7 +22,7 @@ $(document).ready(function(){
 
         $.ajax({
             type: "POST",
-            url: window.location.origin+"/choice/answer",
+            url: document.location.origin +"/choice/answer",
             data: {toilet: toilet, kitchen: kitchen, count: count},
             success: function (response) {
                 console.log('yes'+response);
