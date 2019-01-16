@@ -30,5 +30,71 @@ Route::get('/reservation', 'MainController@reservationPage')->name('reservation'
 
 Route::get('/room/{a}', 'RoomController@room')->name('rooms'); // страница номера
 
-
 Route::get('/house/{a}', 'HouseController@house')->name('houses'); // страница домика
+
+
+// Admin
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group([
+    'middleware' => 'auth',
+    'prefix' => 'adm',
+
+],
+    function() {
+        Route::get('/', [
+            'as' => 'dashboard',
+            'uses' => 'AdminController@dashboard',
+
+        ]);
+
+        Route::group([
+            'as' => 'category::',
+            'prefix' => 'category',
+
+        ], function () {
+
+            /**
+             * CRUD Category
+             */
+            Route::get('/', [
+                'as' => 'index',
+                'uses' => 'CategoryController@index'
+            ]);
+
+            Route::get('create', [
+                'as' => 'create',
+                'uses' => 'CategoryController@create'
+            ]);
+
+            Route::get('{id}/edit', [
+                'as' => 'edit',
+                'uses' => 'CategoryController@edit'
+            ]);
+
+            Route::post('/store', [
+                'as' => 'store',
+                'uses' => 'CategoryController@store'
+            ]);
+
+            Route::post('{id}/update', [
+                'as' => 'update',
+                'uses' => 'CategoryController@update'
+            ]);
+
+            Route::delete('{id}/destroy', [
+                'as' => 'destroy',
+                'uses' => 'CategoryController@destroy'
+            ]);
+        }
+        );
+
+        /**
+         * CRUD Room
+         */
+        Route::resource('room', 'RoomController');
+
+    }
+);
