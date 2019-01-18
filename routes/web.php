@@ -64,19 +64,14 @@ Route::group([
                 'uses' => 'CategoryController@index'
             ]);
 
-            Route::get('create', [
-                'as' => 'create',
-                'uses' => 'CategoryController@create'
+            Route::post('/store', [
+                'as' => 'store',
+                'uses' => 'CategoryController@store'
             ]);
 
             Route::get('{id}/edit', [
                 'as' => 'edit',
                 'uses' => 'CategoryController@edit'
-            ]);
-
-            Route::post('/store', [
-                'as' => 'store',
-                'uses' => 'CategoryController@store'
             ]);
 
             Route::post('{id}/update', [
@@ -88,13 +83,50 @@ Route::group([
                 'as' => 'destroy',
                 'uses' => 'CategoryController@destroy'
             ]);
-        }
-        );
+        });
 
         /**
          * CRUD Room
          */
-        Route::resource('room', 'RoomController');
+        Route::group([
+            'as' => 'room::',
+            'prefix' => 'room',
+
+        ], function () {
+
+            /**
+             * CRUD Category
+             */
+            Route::get('/', [
+                'as' => 'index',
+                'uses' => 'RoomController@index'
+            ]);
+
+            Route::get('create', [
+                'as' => 'create',
+                'uses' => 'RoomController@create'
+            ]);
+
+            Route::post('/store', [
+                'as' => 'store',
+                'uses' => 'RoomController@store'
+            ]);
+
+            Route::get('{id}/edit', [
+                'as' => 'edit',
+                'uses' => 'RoomController@edit'
+            ]);
+
+            Route::post('{id}/update', [
+                'as' => 'update',
+                'uses' => 'RoomController@update'
+            ]);
+
+            Route::delete('{id}/destroy', [
+                'as' => 'destroy',
+                'uses' => 'RoomController@destroy'
+            ]);
+        });
 
     }
 );

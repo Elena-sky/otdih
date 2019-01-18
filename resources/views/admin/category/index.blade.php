@@ -1,15 +1,11 @@
 @extends('admin.app')
-
 @section('content')
-
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Категории</h1>
         @include('admin.parts._breadcrumb')
     </section>
-
     @include('admin.parts._message')
-
     <!-- Main content -->
     <section class="content">
         <!-- Small boxes (Stat box) -->
@@ -17,7 +13,6 @@
         <!-- Main row -->
         <div class="row">
             <div class="col-xs-12">
-
                 @include('admin.category._form', [
                 'class' => 'box-success',
                 'title' => 'Создать категорию',
@@ -28,7 +23,6 @@
                 'route' => route('category::store'),
                 'btnName'=> 'Создать'
                 ])
-
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Список категорий</h3>
@@ -82,5 +76,4 @@
         <!-- /.row (main row) -->
     </section>
     <!-- /.content -->
-
 @endsection

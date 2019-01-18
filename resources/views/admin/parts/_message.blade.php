@@ -4,7 +4,6 @@
             <i class="icon fa fa-check"></i> {{ session('status') }}
         </div>
     @endif
-
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <i class="icon fa fa-ban"></i> Error
