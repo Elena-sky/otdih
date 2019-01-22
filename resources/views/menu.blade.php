@@ -3,34 +3,30 @@
     <h6>Навигация</h6>
     <nav class="sdb_holder">
         <ul>
-            <li><a href="#">Номера</a>
+            @foreach($categories as $category)
+                @if($category['name'] == 'Номера')
+                    <li>{{$category['name']}}
+                        <ul>
+                            @foreach($category->rooms as $room)
+                                <li><a href="{{ route('room', $room['id']) }}">{{$room['name']}}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                @endif
+            @endforeach
+            <li>Домики
                 <ul>
-                    <li><a href="{{ route('rooms', 'standard') }}">Стандарт</a></li>
-                    <li><a href="{{ route('rooms', 'lux') }}">Люкс</a></li>
-                    <li><a href="{{ route('rooms', 'luxPlus') }}">Люкс с балконом</a></li>
-                    <li><a href="{{ route('rooms', 'mansard') }}">Мансарда</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Домики</a>
-                <ul>
-                    <li><a href="">1 комнатные</a>
-                        <ul>
-                            <li><a href="{{ route('houses', 'pink') }}">Розовый </a></li>
-                            <li><a href="{{ route('houses', 'green') }}">Зеленый</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">2 комнатные</a>
-                        <ul>
-                            <li><a href="{{ route('houses', 'lime') }}">Салатовый</a></li>
-                            <li><a href="{{ route('houses', 'lilac') }}">Сиреневый</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">3 комнатные</a>
-                        <ul>
-                            <li><a href="{{ route('houses', 'fishing') }}">Рыбачья</a></li>
-                            <li><a href="{{ route('houses', 'coast') }}">Набережная</a></li>
-                        </ul>
-                    </li>
+                    @foreach($categories as $category)
+                        @if($category['name'] != 'Номера')
+                            <li><a href="" style="pointer-events: none;cursor: default;">{{$category['name']}}</a>
+                                <ul>
+                                    @foreach($category->rooms as $room)
+                                        <li><a href="{{ route('room', $room['id']) }}">{{$room['name']}}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                        @endif
+                    @endforeach
                 </ul>
             </li>
             <li><a href="{{ route('reservation') }}">Бронирование</a></li>

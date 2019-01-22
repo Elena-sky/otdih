@@ -27,9 +27,6 @@ Route::post('/contacts/send', 'MainController@sendMail')->name('mailSend'); // �
 
 Route::get('/reservation', 'MainController@reservationPage')->name('reservation'); // бронирование
 
-
-Route::get('/room/{a}', 'RoomController@room')->name('rooms'); // страница номера
-
 Route::get('/house/{a}', 'HouseController@house')->name('houses'); // страница домика
 
 
@@ -37,6 +34,8 @@ Route::get('/house/{a}', 'HouseController@house')->name('houses'); // стран
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/room/{id}', 'MainController@room')->name('room'); // страница номера
 
 Route::group([
     'middleware' => 'auth',

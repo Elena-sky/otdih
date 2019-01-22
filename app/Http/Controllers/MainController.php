@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Mail\SendMail;
+use App\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
@@ -116,4 +118,58 @@ class MainController extends Controller
         return $result;
     }
 
+
+    /**
+     * Display page of the room
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function room($id)
+    {
+        $categories = Category::all();
+        $rooms = Room::all();
+        $room = Room::find($id);
+        $room['sub_title'] = explode(',', $room['sub_title']);
+        $room['column_one'] = $this->stringToColumn($room['column_one']);
+        $room['column_two'] = $this->stringToColumn($room['column_two']);
+
+        return view('room', compact('room', 'categories', 'rooms'));
+    }
+
+    /**
+     * Create html for options of room
+     *
+     * @param $string
+     * @return string
+     */
+    private function stringToColumn($string)
+    {
+        $firstLevel = explode(':', $string);
+        $secondLevel = explode(';', $firstLevel[1]);
+
+        $html = "<h4> " . ltrim($firstLevel[0]) . "</h4>";
+        $html = $html . "<nav class=\"sdb_holder\"><ul>";
+
+        foreach ($secondLevel as $item) {
+            if (strpos($item, ',')) {
+                $thirdLevel = explode(',', $item);
+
+                $html = $html . "<li><span class=\"fa fa-check-square-o\"></span> " . ltrim($thirdLevel[0]) . "<ul class=\"li-2-level\">";
+
+                foreach ($thirdLevel as $key => $item) {
+                    $html = ($key == 0) ? $html . "" : $html . "<li>• " . ltrim($item) . "</li>";
+                }
+
+                $html = $html . "</ul></li>";
+
+            } else {
+                $html = $html . "<li><span class=\"fa fa-check-square-o\"></span> " . ltrim($item) . "</li>";
+            }
+        }
+
+        $html = $html . "</ul></nav>";
+
+        return $html;
+    }
 }

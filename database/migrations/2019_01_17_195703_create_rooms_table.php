@@ -22,7 +22,7 @@ class CreateRoomsTable extends Migration
             $table->integer('category_id');
             $table->text('column_one')->nullable();
             $table->text('column_two')->nullable();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->boolean('status')->nullable();
             $table->string('serial_number')->nullable();
             $table->timestamps();

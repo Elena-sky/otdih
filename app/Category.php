@@ -12,6 +12,6 @@ class Category extends Model
 
     public function rooms()
     {
-        return $this->hasMany('Webmagic\CustomPages\FieldGroup\FieldGroup', 'parent_id', 'id')->with('fields');
+        return $this->hasMany(Room::class, 'category_id', 'id')->where('status','=','1');
     }
 }

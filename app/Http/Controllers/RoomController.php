@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
-    private $exampleTxt = 'Образец: Заголовок колонки: 1 параметр; 2 параметр, 2.1 параметр, 2.2 параметр; 3 параметр;';
+    private $exampleTxt = 'Заголовок колонки: 1 параметр; 2 параметр, 2.1 параметр, 2.2 параметр; 3 параметр;';
 
     /**
      * Create a new controller instance.
@@ -60,7 +60,6 @@ class RoomController extends Controller
             'name' => 'required',
             'title' => 'required',
             'sub_title' => 'required',
-            'description' => 'required',
             'category_id' => 'required'
         ]);
 
@@ -111,7 +110,6 @@ class RoomController extends Controller
             'name' => 'required',
             'title' => 'required',
             'sub_title' => 'required',
-            'description' => 'required',
             'category_id' => 'required'
         ]);
         $request['status'] = isset($request['status'])?: 0 ;
@@ -140,16 +138,4 @@ class RoomController extends Controller
         return redirect()->route('room::index')
             ->with('status', 'Номер - ' . $roomName . ' удален');
     }
-
-    /**
-     * Display page of the room
-     *
-     * @param $type
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function room($type)
-    {
-        return view('rooms.' . $type);
-    }
-
 }
