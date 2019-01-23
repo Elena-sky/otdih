@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Mail;
 
 class MainController extends Controller
 {
+    private $categories;
+
+    private $rooms;
+
+
+    /***
+     * MainController constructor.
+     */
+    public function __construct()
+    {
+        $this->categories = Category::all();
+        $this->rooms = Room::all();
+    }
 
     /**
      * Display page the reservation
@@ -21,7 +34,10 @@ class MainController extends Controller
      */
     public function reservationPage()
     {
-        return view('other.reservation');
+        $categories = $this->categories;
+        $rooms = $this->rooms;
+
+        return view('other.reservation', compact('categories', 'rooms'));
     }
 
 
@@ -32,7 +48,10 @@ class MainController extends Controller
      */
     public function contacts()
     {
-        return view('other.contacts');
+        $categories = $this->categories;
+        $rooms = $this->rooms;
+
+        return view('other.contacts', compact('categories', 'rooms'));
     }
 
 
@@ -63,7 +82,10 @@ class MainController extends Controller
      */
     public function about()
     {
-        return view('other.about');
+        $categories = $this->categories;
+        $rooms = $this->rooms;
+
+        return view('other.about', compact('categories', 'rooms'));
     }
 
 
@@ -127,8 +149,8 @@ class MainController extends Controller
      */
     public function room($id)
     {
-        $categories = Category::all();
-        $rooms = Room::all();
+        $categories = $this->categories;
+        $rooms = $this->rooms;
         $room = Room::find($id);
         $room['sub_title'] = explode(',', $room['sub_title']);
         $room['column_one'] = $this->stringToColumn($room['column_one']);

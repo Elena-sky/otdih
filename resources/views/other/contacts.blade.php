@@ -7,7 +7,10 @@
             <!-- main body -->
 
             <!-- Menu -->
-        @include('menu')
+        @include('menu', [
+          //  'categories' => $categories, // todo
+           // 'rooms' => $rooms
+        ])
         <!-- End menu -->
 
             <!-- Reservation -->
