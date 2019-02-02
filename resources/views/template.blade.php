@@ -39,8 +39,12 @@
         <!-- ################################################################################################ -->
         <div class="fl_left">
             <ul class="nospace">
-                <li><i class="fa fa-phone"></i> +38(097)95 61 097</li>
-                <li><i class="fa fa-phone"></i>  +38(093)91 01 377</li>
+                @foreach($options['phones'] as $phone)
+                    <li><i class="fa fa-phone"></i> {{$phone['phone']}}</li>
+                @endforeach
+                @foreach($options['viber'] as $viber)
+                    <li>Viber: {{ $viber['phone'] }}</li>
+                @endforeach
             </ul>
         </div>
         <div class="fl_right">
@@ -65,41 +69,12 @@
             </div>
             <nav id="mainav" class="fl_right">
                 <ul class="clear">
-                    {{--<li class="active"><a href="/">Главная</a></li>--}}
-                    <li><a class="drop" href="#">Номера</a>
-                        <ul>
-                            <li><a href="{{ route('rooms', 'standard') }}">Стандарт</a>
-                            </li>
-                            <li><a href="{{ route('rooms', 'lux') }}">Люкс</a>
-                            </li>
-                            <li><a href="{{ route('rooms', 'luxPlus') }}">Люкс с балконом</a>
-                            </li>
-                            <li><a href="{{ route('rooms', 'mansard') }}">Мансарда</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a class="drop" href="#">Домики</a>
-                        <ul>
-                            <li><a class="drop" href="#">1 комнатные</a>
-                                <ul>
-                                    <li><a href="{{ route('houses', 'pink') }}">Розовый</a></li>
-                                    <li><a href="{{ route('houses', 'green') }}">Зеленый</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="drop" href="#">2 комнатные</a>
-                                <ul>
-                                    <li><a href="{{ route('houses', 'lime') }}">Салатовый</a></li>
-                                    <li><a href="{{ route('houses', 'lilac') }}">Сиреневый</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="drop" href="#">3 комнатные</a>
-                                <ul>
-                                    <li><a href="{{ route('houses', 'fishing') }}">Рыбачья</a></li>
-                                    <li><a href="{{ route('houses', 'coast') }}">Набережная</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                    <!-- Menu -->
+                    @include('parts.catalog', [
+                         'categories' => $options['categories'],
+                         'rooms' => $options['rooms']
+                    ])
+                    <!-- End menu -->
                     <li><a href="{{ route('reservation') }}">Бронирование</a></li>
                 </ul>
             </nav>
@@ -158,22 +133,27 @@
                 <li class="one_quarter first">
                     <div class="infobox"><i class="fa fa-phone"></i>
                         <ul class="nospace">
-                            <li>+38(097)95 61 097</li>
-                            <li>+38(093)91 01 377</li>
+                            @foreach($options['phones'] as $phone)
+                                <li>{{$phone['phone']}}</li>
+                            @endforeach
                         </ul>
                     </div>
                 </li>
                 <li class="one_quarter">
-                    <div class="infobox"><i class="fa fa-vk"></i>
+                    <div class="infobox"><i class="fa fa-pencil-square-o"></i>
                         <ul class="nospace">
-                            <li><a href="https://vk.com/otdix_u_morya">Наша группа VK</a></li>
+                            @foreach($options['viber'] as $viber)
+                                <li>Viber: <br> {{ $viber['phone'] }}</li>
+                            @endforeach
                         </ul>
                     </div>
                 </li>
                 <li class="one_quarter">
-                    <div class="infobox"><i class="fa fa-odnoklassniki"></i>
+                    <div class="infobox"><i class="fa fa-external-link"></i>
                         <ul class="nospace">
-                            <li><a href="https://www.ok.ru/otdih.od.ua">Наша группа Ok</a></li>
+                            <li><a href="https://www.ok.ru/otdih.od.ua">Группа в Ok</a></li>
+                            <li><a href="https://vk.com/otdix_u_morya">Группа в VK</a></li>
+
                         </ul>
                     </div>
                 </li>

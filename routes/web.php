@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'MainController@main')->name('main');
 
 Route::get('/contacts', 'MainController@contacts')->name('contactsPage');
 
@@ -126,6 +124,27 @@ Route::group([
                 'uses' => 'RoomController@destroy'
             ]);
         });
+
+        Route::group([
+            'as' => 'contact-phone::',
+            'prefix' => 'contact-phone',
+
+        ], function () {
+
+            /**
+             * Contact phones
+             */
+            Route::post('/store', [
+                'as' => 'store',
+                'uses' => 'ContactPhoneController@store'
+            ]);
+
+            Route::delete('{id}/destroy', [
+                'as' => 'destroy',
+                'uses' => 'ContactPhoneController@destroy'
+            ]);
+        });
+
 
     }
 );

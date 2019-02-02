@@ -9,13 +9,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
+use App\ContactPhones;
 
 
 class MainController extends Controller
 {
-    private $categories;
-
-    private $rooms;
+    private $options  = [];
 
 
     /***
@@ -23,8 +22,22 @@ class MainController extends Controller
      */
     public function __construct()
     {
-        $this->categories = Category::all();
-        $this->rooms = Room::all();
+        $this->options['phones'] = ContactPhones::all();
+        $this->options['viber'] = ContactPhones::where('viber', 1)->get();
+        $this->options['categories'] = Category::all();
+        $this->options['rooms'] = Room::all();
+    }
+
+    /**
+     * Display page the reservation
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function main()
+    {
+        $options = $this->options;
+
+        return view('index', compact('options'));
     }
 
     /**
@@ -34,10 +47,9 @@ class MainController extends Controller
      */
     public function reservationPage()
     {
-        $categories = $this->categories;
-        $rooms = $this->rooms;
+        $options = $this->options;
 
-        return view('other.reservation', compact('categories', 'rooms'));
+        return view('other.reservation', compact('options'));
     }
 
 
@@ -48,10 +60,9 @@ class MainController extends Controller
      */
     public function contacts()
     {
-        $categories = $this->categories;
-        $rooms = $this->rooms;
+        $options = $this->options;
 
-        return view('other.contacts', compact('categories', 'rooms'));
+        return view('other.contacts', compact('options'));
     }
 
 
@@ -82,10 +93,9 @@ class MainController extends Controller
      */
     public function about()
     {
-        $categories = $this->categories;
-        $rooms = $this->rooms;
+        $options = $this->options;
 
-        return view('other.about', compact('categories', 'rooms'));
+        return view('other.about', compact('options'));
     }
 
 
@@ -96,7 +106,9 @@ class MainController extends Controller
      */
     public function choice()
     {
-        return view('other.choice');
+        $options = $this->options;
+
+        return view('other.choice', compact('options'));
     }
 
 
@@ -149,14 +161,13 @@ class MainController extends Controller
      */
     public function room($id)
     {
-        $categories = $this->categories;
-        $rooms = $this->rooms;
+        $options = $this->options;
         $room = Room::find($id);
         $room['sub_title'] = explode(',', $room['sub_title']);
         $room['column_one'] = $this->stringToColumn($room['column_one']);
         $room['column_two'] = $this->stringToColumn($room['column_two']);
 
-        return view('room', compact('room', 'categories', 'rooms'));
+        return view('room', compact('room', 'options'));
     }
 
     /**

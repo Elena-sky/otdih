@@ -3,12 +3,12 @@
     <div class="wrapper row3">
         <main class="hoc container clear">
             <!-- main body -->
-            <!-- Menu -->
-        @include('menu', [
-            'categories' => $categories,
-            'rooms' => $rooms
-        ])
-        <!-- End menu -->
+            <!-- Navigation -->
+            @include('parts.navigation', [
+                'categories' => $options['categories'],
+                'rooms' => $options['rooms']
+            ])
+            <!-- End navigation -->
             <!-- Room -->
             <div class="content three_quarter">
                 <div class="btmspace-50 center">

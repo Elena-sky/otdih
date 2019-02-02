@@ -7,7 +7,10 @@
             <!-- main body -->
 
             <!-- Menu -->
-        @include('menu')
+        @include('parts.navigation', [
+          'categories' => $options['categories'],
+          'rooms' => $options['rooms']
+        ])
         <!-- End menu -->
 
             <!-- Reservation -->

@@ -7,9 +7,9 @@
             <!-- main body -->
 
             <!-- Menu -->
-        @include('menu', [
-          //  'categories' => $categories, // todo
-           // 'rooms' => $rooms
+        @include('parts.navigation', [
+          'categories' => $options['categories'],
+          'rooms' => $options['rooms']
         ])
         <!-- End menu -->
 
