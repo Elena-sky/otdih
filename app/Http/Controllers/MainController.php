@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\Mail\SendMail;
+use App\Mail;
 use App\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Mail;
 use App\ContactPhones;
 
 
@@ -74,13 +73,12 @@ class MainController extends Controller
      */
     public function sendMail(Request $request)
     {
-        $month = ($request->month)? $request->month : '';
+        $request->validate([
+            'name' => 'required',
+            'email' => 'email'
+        ]);
 
-        $dataMail = ['name' => $request->name, 'email' => $request->email, 'phone' => $request->phone,
-            'count' => $request->count, 'month' => $month, 'comment' => $request->comment];
-
-         Mail::to(Config::get('constants.mail.email_address'))
-        ->send(new SendMail ($dataMail));
+        Mail::create($request->except('_token'));
 
         return redirect()->back()->with('message', 'Письмо отправлено!');
     }

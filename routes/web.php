@@ -145,6 +145,44 @@ Route::group([
             ]);
         });
 
+        Route::group([
+            'as' => 'mail::',
+            'prefix' => 'mail',
+
+        ], function () {
+
+            Route::get('/', [
+                'as' => 'index',
+                'uses' => 'MailController@index'
+            ]);
+
+            Route::get('/trashed', [
+                'as' => 'trashed',
+                'uses' => 'MailController@trashed'
+            ]);
+
+            Route::delete('{id}/destroy', [
+                'as' => 'destroy',
+                'uses' => 'MailController@destroy'
+            ]);
+
+            Route::delete('{id}/restore', [
+                'as' => 'restore',
+                'uses' => 'MailController@restore'
+            ]);
+
+            Route::delete('{id}/forceDelete', [
+                'as' => 'forceDelete',
+                'uses' => 'MailController@forceDelete'
+            ]);
+
+
+
+
+
+
+        });
+
 
     }
 );

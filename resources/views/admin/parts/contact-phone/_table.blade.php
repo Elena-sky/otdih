@@ -18,7 +18,7 @@
                         {{ Form::button('<i class="fa fa-trash"></i>', [
                         'type' => 'submit',
                         'class' => 'btn btn-danger btn-sm',
-                        'onclick' => 'return confirm("Удалить телефон '.$phone['name'].' ?")'
+                        'onclick' => 'return confirm("Удалить телефон '.$phone['phone'].' ?")'
                         ] )  }}
                         {!! Form::close() !!}
                     </td>

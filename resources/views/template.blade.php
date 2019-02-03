@@ -40,10 +40,10 @@
         <div class="fl_left">
             <ul class="nospace">
                 @foreach($options['phones'] as $phone)
-                    <li><i class="fa fa-phone"></i> {{$phone['phone']}}</li>
+                    <li><a href="tel:{{$phone['telephone_call']}}"><i class="fa fa-phone"></i> {{$phone['phone']}}</a></li>
                 @endforeach
                 @foreach($options['viber'] as $viber)
-                    <li>Viber: {{ $viber['phone'] }}</li>
+                    <li><a href="tel:{{$phone['telephone_call']}}">Viber: {{ $viber['phone'] }}</a></li>
                 @endforeach
             </ul>
         </div>
@@ -134,7 +134,7 @@
                     <div class="infobox"><i class="fa fa-phone"></i>
                         <ul class="nospace">
                             @foreach($options['phones'] as $phone)
-                                <li>{{$phone['phone']}}</li>
+                                <li><a href="tel:{{$phone['telephone_call']}}"><i class="fa fa-phone"></i> {{$phone['phone']}}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -143,7 +143,7 @@
                     <div class="infobox"><i class="fa fa-pencil-square-o"></i>
                         <ul class="nospace">
                             @foreach($options['viber'] as $viber)
-                                <li>Viber: <br> {{ $viber['phone'] }}</li>
+                                <li><a href="tel:{{$phone['telephone_call']}}">Viber: <br> {{ $viber['phone'] }}</a></li>
                             @endforeach
                         </ul>
                     </div>

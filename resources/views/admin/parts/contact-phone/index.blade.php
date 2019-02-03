@@ -3,7 +3,7 @@
         <h3 class="box-title">Контактные телефоны</h3>
     </div>
     <!-- /.box-header -->
-    @include('admin.contact-phone._table', ['phones' => $phones])
+    @include('admin.parts.contact-phone._table', ['phones' => $phones])
     <hr>
-    @include('admin.contact-phone._form')
+    @include('admin.parts.contact-phone._form')
 </div>

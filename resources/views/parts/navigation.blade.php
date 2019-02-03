@@ -23,10 +23,11 @@
             5 минут к морю<br>
             <br>
             @foreach($options['phones'] as $phone)
-                Tel: {{$phone['phone']}}<br>
+                <a href="tel:{{$phone['telephone_call']}}">Tel: {{$phone['phone']}}</a>
+                <br>
             @endforeach
             @foreach($options['viber'] as $viber)
-                <li>Viber: {{ $viber['phone'] }}</li>
+                <li><a href="tel:{{$phone['telephone_call']}}">Viber: {{ $viber['phone'] }}</a></li>
             @endforeach
         </address>
     </div>
