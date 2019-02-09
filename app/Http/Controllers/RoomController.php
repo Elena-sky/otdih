@@ -183,7 +183,8 @@ class RoomController extends Controller
         $data = $_POST;
 
         $imgDelete = Image::find($data['imgId']);
-        $path = config('app.imgPath.rooms') . $imgDelete->filename;
+        $path = public_path() . config('app.imgPath.rooms') . $imgDelete->image_name;
+
         if (file_exists($path)) {
             unlink($path);
         }

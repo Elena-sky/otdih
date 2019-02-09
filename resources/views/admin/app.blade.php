@@ -97,14 +97,20 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">Hello, {{ Auth::user()->name }}</li>
-
                     <li><a href="{{ route('dashboard') }}"><i class="fa fa-circle-o text-red"></i>
                             <span>Dashboard</span></a></li>
-                    <li class="header">Меню</li>
-                    <li><a href="{{ route('category::index') }}"><i class="fa fa-circle-o text-green"></i> <span>Категории</span></a>
+                    <li class="treeview menu-open">
+                        <a href="#">
+                            <i class="fa fa-circle text-yellow"></i> <span>Контент</span>
+                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                        </a>
+                        <ul class="treeview-menu" style="display: block;">
+                            <li><a href="{{ route('category::index') }}"><i class="fa fa-circle-o text-green"></i>
+                                    <span>Категории</span></a></li>
+                            <li><a href="{{ route('room::index') }}"><i class="fa fa-key text-aqua"></i>
+                                    <span>Номера/Домики</span></a></li>
+                        </ul>
                     </li>
-                    <li><a href="{{ route('room::index') }}"><i class="fa fa-key text-aqua"></i>
-                            <span>Номера/Домики</span></a></li>
                     <li class="treeview menu-open">
                         <a href="#">
                             <i class="fa fa-envelope text-yellow"></i> <span>Почта</span>
