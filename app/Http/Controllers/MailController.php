@@ -86,4 +86,19 @@ class MailController extends Controller
         return redirect()->route('mail::trashed');
     }
 
+    /**
+     * Ajax get count letters
+     *
+     * @return array
+     */
+    public function lettersCount()
+    {
+        $mail = [
+            'letters' => Mail::count(),
+            'trashed' => Mail::onlyTrashed()->count()
+        ];
+
+        return $mail;
+    }
+
 }

@@ -80,34 +80,34 @@
                 <input type="checkbox" name="status" value="1" @if($room['status']) checked @endif>
             </label>
         </div>
-    </div>
-    <div class="box-body pad">
+        <div class="pad">
         <textarea id="editor1" name="description" rows="10" cols="80"
                   style="visibility: hidden; display: none;">{{$room['description']}}</textarea>
-    </div>
-    <div class="form-group ">
-        {!! Form::label('currentImage', 'Текущие изобращения') !!}
-        <div class="col-sm-12">
-            <div class="row">
-                @if(isset($room->images) && count($room->images) > 0)
-                    @foreach($room->images as $image )
-                        <div class="content clossable" id="Image{{$image->id}}">
-                            <div class="close" data-img-id="{{$image->id}}" data-token="{{ csrf_token() }}"
-                                 data-url="{{ route('room::destroyImg') }}"><i class="fa fa-trash"></i></div>
-                            <img id="pr-update" src="{{ asset( config('app.imgPath.rooms') . $image->image_name) }}"
-                                 alt="{{$image->id}}">
-                        </div>
-                    @endforeach
-                @else
-                    <div class="col-sm-4"><p>Нет фотографий</p></div>
-                @endif
+        </div>
+        <div class="form-group ">
+            {!! Form::label('currentImage', 'Текущие изобращения') !!}
+            <div class="col-sm-12">
+                <div class="row">
+                    @if(isset($room->images) && count($room->images) > 0)
+                        @foreach($room->images as $image )
+                            <div class="content clossable" id="Image{{$image->id}}">
+                                <div class="close" data-img-id="{{$image->id}}" data-token="{{ csrf_token() }}"
+                                     data-url="{{ route('room::destroyImg') }}"><i class="fa fa-trash"></i></div>
+                                <img id="pr-update" src="{{ asset( config('app.imgPath.rooms') . $image->image_name) }}"
+                                     alt="{{$image->id}}">
+                            </div>
+                        @endforeach
+                    @else
+                        <div class="col-sm-4"><p>Нет фотографий</p></div>
+                    @endif
+                </div>
             </div>
         </div>
-    </div>
-    <div class="form-group">
-        {!! Form::label('productImage', 'Новое изображение:') !!}
-        <div class="col-sm-12">
-            {!! Form::file('images[]', ['multiple' => true])!!}
+        <div class="form-group">
+            {!! Form::label('productImage', 'Новое изображение:') !!}
+            <div class="col-sm-12">
+                {!! Form::file('images[]', ['multiple' => true])!!}
+            </div>
         </div>
     </div>
     <div class="box-footer">

@@ -183,6 +183,11 @@ Route::group([
                 'uses' => 'MailController@forceDelete'
             ]);
 
+            Route::get('/lettersCount', [
+                'as' => 'lettersCount',
+                'uses' => 'MailController@lettersCount'
+            ]);
+
 
         });
 
