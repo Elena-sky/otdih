@@ -21,4 +21,14 @@ class Room extends Model
         'status',
         'serial_number'
     ];
+
+    /**
+     * Relation to Gesture
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function images()
+    {
+        return $this->hasMany(Image::class, 'room_id', 'id');
+    }
 }

@@ -2,7 +2,10 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Номера/Домики</h1>
+        <h1>
+            Dashboard
+            <small>Control panel</small>
+        </h1>
     </section>
     @include('admin.parts._message')
     <!-- Main content -->
@@ -11,15 +14,8 @@
         <!-- /.row -->
         <!-- Main row -->
         <div class="row">
-            <div class="col-xs-12">
-                @foreach($categories as $category)
-                    @include('admin.rooms._table', [
-                   'class' => 'box-success',
-                   'title' => 'Создать номер',
-                   'categories' => $categories,
-                   'rooms' => $rooms
-                   ])
-                @endforeach
+            <div class="col-md-6">
+                @include('admin.parts.contact-phone.index', ['phones' => $phones])
             </div>
         </div>
         <!-- /.row (main row) -->

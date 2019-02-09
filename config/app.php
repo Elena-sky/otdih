@@ -232,4 +232,8 @@ return [
 
     ],
 
+    'imgPath' => [
+        'rooms' => DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'rooms' . DIRECTORY_SEPARATOR
+    ],
+
 ];

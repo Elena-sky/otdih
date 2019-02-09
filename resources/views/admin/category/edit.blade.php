@@ -3,9 +3,6 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Категории</h1>
-        <ol class="breadcrumb">
-            @include('admin.parts._breadcrumb')
-        </ol>
     </section>
     <!-- Main content -->
     <section class="content">

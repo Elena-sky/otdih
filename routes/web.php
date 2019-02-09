@@ -40,7 +40,7 @@ Route::group([
     'prefix' => 'adm',
 
 ],
-    function() {
+    function () {
         Route::get('/', [
             'as' => 'dashboard',
             'uses' => 'AdminController@dashboard',
@@ -123,6 +123,13 @@ Route::group([
                 'as' => 'destroy',
                 'uses' => 'RoomController@destroy'
             ]);
+
+            // Ajax destroy image
+            Route::post('/destroy/img', [
+                'as' => 'destroyImg',
+                'uses' => 'RoomController@destroyImg'
+            ]);
+
         });
 
         Route::group([
@@ -175,10 +182,6 @@ Route::group([
                 'as' => 'forceDelete',
                 'uses' => 'MailController@forceDelete'
             ]);
-
-
-
-
 
 
         });

@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use App\Room;
 use App\Category;
 use Illuminate\Http\Request;
+use App\ImageUploader;
 
 class RoomController extends Controller
 {
+    use ImageUploader;
+
     private $exampleTxt = 'Заголовок колонки: 1 параметр; 2 параметр, 2.1 параметр, 2.2 параметр; 3 параметр;';
 
     /**
@@ -27,7 +31,7 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $rooms = Room::all();
+        $rooms = Room::with('images')->get();
         $categories = Category::all();
 
         return view('admin.rooms.index', compact('categories', 'rooms'));
@@ -63,7 +67,22 @@ class RoomController extends Controller
             'category_id' => 'required'
         ]);
 
-        Room::create($request->except('_token'));
+        $room = Room::create($request->except('_token'));
+        $path = config('app.imgPath.rooms');
+        $imagesName = self::upload($request, $path);
+
+        if (!empty($imagesName)) {
+            foreach ($imagesName as $oneImg) {
+                $dataImages[] = [
+                    'image_name' => $oneImg,
+                    'room_id' => $room->id,
+                    'created_at' => $room->created_at,
+                    'updated_at' => $room->updated_at
+                ];
+            }
+
+            Image::insert($dataImages);
+        }
 
         //Display a successful message
         return redirect()->route('room::create')
@@ -112,10 +131,27 @@ class RoomController extends Controller
             'sub_title' => 'required',
             'category_id' => 'required'
         ]);
-        $request['status'] = isset($request['status'])?: 0 ;
+        $request['status'] = isset($request['status']) ?: 0;
 
-        $item = Room::findOrFail($id);
-        $item->update($request->except('_token'));
+        $room = Room::findOrFail($id);
+        $room->update($request->except('_token'));
+
+        $path = config('app.imgPath.rooms');
+        $imagesName = self::upload($request, $path);
+
+        if (!empty($imagesName)) {
+            foreach ($imagesName as $oneImg) {
+                $dataImages[] = [
+                    'image_name' => $oneImg,
+                    'room_id' => $room->id,
+                    'created_at' => $room->created_at,
+                    'updated_at' => $room->updated_at
+                ];
+            }
+
+            Image::insert($dataImages);
+        }
+
 
         //Display a successful message
         return redirect()->route('room::index')
@@ -137,5 +173,21 @@ class RoomController extends Controller
         //Display a successful message
         return redirect()->route('room::index')
             ->with('status', 'Номер - ' . $roomName . ' удален');
+    }
+
+    /**
+     *  Ajax destroy image
+     */
+    public function destroyImg()
+    {
+        $data = $_POST;
+
+        $imgDelete = Image::find($data['imgId']);
+        $path = config('app.imgPath.rooms') . $imgDelete->filename;
+        if (file_exists($path)) {
+            unlink($path);
+        }
+
+        $imgDelete->delete();
     }
 }
