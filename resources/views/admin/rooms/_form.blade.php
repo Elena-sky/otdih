@@ -18,13 +18,13 @@
         cursor: pointer;
     }
 
-    .content {
+    .contentImg {
         position: relative;
         float: left;
     }
 
-    .content:after {
-        content: '\A';
+    .contentImg:after {
+        contentImg: '\A';
         position: absolute;
         top: 0;
         left: 0;
@@ -80,7 +80,7 @@
                 <input type="checkbox" name="status" value="1" @if($room['status']) checked @endif>
             </label>
         </div>
-        <div class="pad">
+        <div class="box-body pad">
         <textarea id="editor1" name="description" rows="10" cols="80"
                   style="visibility: hidden; display: none;">{{$room['description']}}</textarea>
         </div>
@@ -90,7 +90,7 @@
                 <div class="row">
                     @if(isset($room->images) && count($room->images) > 0)
                         @foreach($room->images as $image )
-                            <div class="content clossable" id="Image{{$image->id}}">
+                            <div class="contentImg clossable" id="Image{{$image->id}}">
                                 <div class="close" data-img-id="{{$image->id}}" data-token="{{ csrf_token() }}"
                                      data-url="{{ route('room::destroyImg') }}"><i class="fa fa-trash"></i></div>
                                 <img id="pr-update" src="{{ asset( config('app.imgPath.rooms') . $image->image_name) }}"
