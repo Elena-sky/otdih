@@ -2,6 +2,7 @@
     <h6>Навигация</h6>
     <nav class="sdb_holder">
         <ul>
+            <li><a href="{{ route('choicePage') }}">Сравнить номера</a></li>
             <!-- Menu -->
         @include('parts.catalog', [
             'categories' => $categories,

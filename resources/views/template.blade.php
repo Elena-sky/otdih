@@ -88,9 +88,9 @@
             <ul class="slides">
                 <li>
                     <article>
-                        <h3 class="heading">Подобрать номер</h3>
+                        <h3 class="heading">Сравнить номера</h3>
                         <p>Выбрать номер легко и быстро! </p>
-                        <footer><a class="btn" href="{{ route('choicePage') }}">подобрать</a></footer>
+                        <footer><a class="btn" href="{{ route('choicePage') }}">сравнить</a></footer>
                     </article>
                 </li>
                 <li>

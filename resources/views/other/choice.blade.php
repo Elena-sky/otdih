@@ -1,127 +1,180 @@
 @extends('template')
-
 @section('content')
-
-
-<div class="wrapper row3">
-    <main class="hoc container clear">
-        <!-- main body -->
-
-        <!-- Menu -->
-    @include('menu')
-    <!-- End menu -->
-
-        <!-- Reservation -->
-        <div class="content three_quarter">
-
-            <!-- Description -->
-            <div class="content">
-                <h6 class="norm inf">Выберите нужные удобства в номер</h6>
-
-                <form class="inf">
-
-                    <div class="reservation">
-                        <p class="rooms-block">
-                            <input type="checkbox" class="kitchen" value="1">
-                            - Кухня в номере
-                        </p>
+    <style>
+        p {
+            font-size: 16px;
+        }
+        .txt-red {
+            color: #FF0000;
+        }
+        .txt-green {
+            color: #009900;
+        }
+        .txt-orange {
+            color: #ff9933;
+        }
+        .txt-center {
+            text-align: center;
+        }
+        .txt-link {
+            color: #43BFCB;
+        }
+    </style>
+    <div class="wrapper row3">
+        <main class="hoc container clear">
+        @include('parts.navigation', [
+          'categories' => $options['categories'],
+          'rooms' => $options['rooms']
+        ])
+            <!-- Reservation -->
+            <div class="content three_quarter">
+                <!-- Description -->
+                <div class="content">
+                    <div class="btmspace-50 center">
+                        <h2>Таблица сравнения</h2>
                     </div>
-
-                    <div class="reservation">
-                        <p class="rooms-block ">
-                            <input type="checkbox" class="toilet" value="1">
-                            - Душ и туалет в номере
-                        </p>
-                    </div>
-
-                    <div class="reservation">
-                        <p class=" roomsV">Укажите колличество человек (включая детей с 1 года)</p>
-                        <input type="number" class="form-control styler rooms-block count"  style="width: 50px;"
-                               value="2" min="2" max="9" >
-                    </div>
-
-                </form>
-
-                <div class="rooms-block">
-                    <div class="rooms">
-                        <h6 class="norm">Вам подойдет:</h6>
-                    </div>
-                    <div class="variant">
-
-                        <div class="std varR roomsV standard">
-                            <a href="{{ route('rooms', 'standard') }}">
-                                <span class="fa fa-key"></span> Стандарт
-                            </a>
-                        </div>
-
-                        <div class="std varR roomsV standard">
-                             <a href="{{ route('rooms', 'mansard') }}">
-                                <span class="fa fa-key"></span> Мансарда
-                            </a>
-                        </div>
-
-                        <div class="std varR roomsV lux">
-                            <a href="{{ route('rooms', 'lux') }}">
-                                <span class="fa fa-key"></span> Люкс
-                            </a>
-                        </div>
-
-                        <div class="std varR roomsV luxPlus">
-                            <a href="{{ route('rooms', 'luxPlus') }}">
-                                <span class="fa fa-key"></span> Люкс балкон
-                            </a>
-                        </div>
-
-                        <div class="std varR roomsV house1">
-                            <span class="fa fa-key"></span> 1 комнатный домик
-                            <ul>
-                                <a href="{{ route('houses', 'pink') }}">
-                                    <li>Розовый</li>
-                                </a>
-                                <a href="{{ route('houses', 'green') }}">
-                                    <li>Зеленый</li>
-                                </a>
-                            </ul>
-                        </div>
-
-                        <div class="std varR roomsV house2">
-                            <span class="fa fa-key"></span> 2 комнатный домик
-                            <ul>
-                                <a href="{{ route('houses', 'lilac') }}">
-                                    <li>Сиреневый</li>
-                                </a>
-                                <a href="{{ route('houses', 'lime') }}">
-                                    <li>Салатовый</li>
-                                </a>
-                            </ul>
-
-                            <span class="fa fa-key"></span> 3 комнатный домик
-                            <ul>
-                                <a href="{{ route('houses', 'fishing') }}">
-                                    <li>Рыбачья</li>
-                                </a>
-                                <a href="{{ route('houses', 'coast') }}">
-                                    <li>Набережная</li>
-                                </a>
-                            </ul>
-                        </div>
-
-                    </div>
+                    <h6>Номера</h6>
+                    <table border="1" cellspacing="0">
+                        <tbody class="txt-center">
+                        <tr>
+                            <td><p><span><strong></strong></span></p></td>
+                            <td><p><span><strong>Этаж</strong></span></p></td>
+                            <td><p><span><strong>Спальных мест</strong></span></p></td>
+                            <td><p><span><strong>Санузел</strong></span></p></td>
+                            <td><p><span><strong>Кухня</strong></span></p></td>
+                            <td><p><span><strong>ТВ</strong></span></p></td>
+                            <td><p><span><strong>Wi-Fi</strong></span></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><span class="txt-link">Стандарт</span></p></td>
+                            <td><p><span>2</span></p></td>
+                            <td><p><span>2-4</span></p></td>
+                            <td><p><span class="txt-orange">на этаже</span></p></td>
+                            <td><p><span class="txt-orange">на этаже</span></p></td>
+                            <td><p><span class="txt-green">в номере</span></p></td>
+                            <td><p><span class="txt-green"><i class="fa fa-lg fa-check"></i></span></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><span class="txt-link">Люкс</span></p></td>
+                            <td><p><span>2</span></p></td>
+                            <td><p><span>2-4</span></p></td>
+                            <td><p><span class="txt-green">в номере</span></p></td>
+                            <td><p><span class="txt-orange">на этаже</span></p></td>
+                            <td><p><span class="txt-green">в номере</span></p></td>
+                            <td><p><span class="txt-green"><i class="fa fa-lg fa-check"></i></span></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><span class="txt-link">Люкс с балконом</span></p></td>
+                            <td><p><span>2</span></p></td>
+                            <td><p><span>2-4</span></p></td>
+                            <td><p><span class="txt-green">в номере</span></p></td>
+                            <td><p><span class="txt-orange">на этаже</span></p></td>
+                            <td><p><span class="txt-green">в номере</span></p></td>
+                            <td><p><span class="txt-green"><i class="fa fa-lg fa-check"></i></span></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><span class="txt-link">Мансарда</span></p></td>
+                            <td><p><span>3</span></p></td>
+                            <td><p><span>2-4</span></p></td>
+                            <td><p><span class="txt-orange">на 2 этаже</span></p></td>
+                            <td><p><span class="txt-orange">на 2 этаже</span></p></td>
+                            <td><p><span class="txt-orange">на 2 этаже</span></p></td>
+                            <td><p><span class="txt-green"><i class="fa fa-lg fa-check"></i></span></p></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h6>1 комнатные домики</h6>
+                    <table border="1" cellspacing="0">
+                        <tbody class="txt-center">
+                        <tr>
+                            <td></td>
+                            <td><p><span><strong>Этаж</strong></span></p></td>
+                            <td><p><span><strong>Спальных мест</strong></span></p></td>
+                            <td><p><span><strong>Санузел</strong></span></p></td>
+                            <td><p><span><strong>Кухня</strong></span></p></td>
+                            <td><p><span><strong>ТВ</strong></span></p></td>
+                            <td><p><span><strong>Wi-Fi</strong></span></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><span class="txt-link">Розовый</span></p></td>
+                            <td><p><span>1</span></p></td>
+                            <td><p><span>2-4</span></p></td>
+                            <td><p><span class="txt-green">в домике</span></p></td>
+                            <td><p><span class="txt-green">в домике</span></p></td>
+                            <td><p><span class="txt-green">в домике</span></p></td>
+                            <td><p><span class="txt-green"><i class="fa fa-lg fa-check"></i></span></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><span class="txt-link">Зеленый</span></p></td>
+                            <td><p><span>2</span></p></td>
+                            <td><p><span>2-5</span></p></td>
+                            <td><p><span class="txt-green">в домике</span></p></td>
+                            <td><p><span class="txt-green">в домике</span></p></td>
+                            <td><p><span class="txt-green">в домике</span></p></td>
+                            <td><p><span class="txt-green"><i class="fa fa-lg fa-check"></i></span></p></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h6>2 комнатные домики</h6>
+                    <table border="1" cellspacing="0">
+                        <tbody class="txt-center">
+                        <tr>
+                            <td></td>
+                            <td><p><span><strong>Этаж</strong></span></p></td>
+                            <td><p><span><strong>Спальных мест</strong></span></p></td>
+                            <td><p><span><strong>Санузел</strong></span></p></td>
+                            <td><p><span><strong>Кухня</strong></span></p></td>
+                            <td><p><span><strong>ТВ</strong></span></p></td>
+                            <td><p><span><strong>Wi-Fi</strong></span></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><span class="txt-link">Салатовый</span></p></td>
+                            <td><p><span>1</span></p></td>
+                            <td><p><span>4-8</span></p></td>
+                            <td><p><span class="txt-green">в домике</span></p></td>
+                            <td><p><span class="txt-green">в домике</span></p></td>
+                            <td><p><span class="txt-green">в номере</span></p></td>
+                            <td><p><span class="txt-green"><i class="fa fa-lg fa-check"></i></span></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><span class="txt-link">Сиреневый</span></p></td>
+                            <td><p><span>2</span></p></td>
+                            <td><p><span>4-8</span></p></td>
+                            <td><p><span class="txt-green">в домике</span></p></td>
+                            <td><p><span class="txt-green">в домике</span></p></td>
+                            <td><p><span class="txt-green">в номере</span></p></td>
+                            <td><p><span class="txt-green"><i class="fa fa-lg fa-check"></i></span></p></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h6>3 комнатные домики</h6>
+                    <table border="1" cellspacing="0">
+                        <tbody class="txt-center">
+                        <tr>
+                            <td></td>
+                            <td><p><span><strong>Этаж</strong></span></p></td>
+                            <td><p><span><strong>Спальных мест</strong></span></p></td>
+                            <td><p><span><strong>Санузел</strong></span></p></td>
+                            <td><p><span><strong>Кухня</strong></span></p></td>
+                            <td><p><span><strong>ТВ</strong></span></p></td>
+                            <td><p><span><strong>Wi-Fi</strong></span></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><span class="txt-link">Набережный</span></p></td>
+                            <td><p><span>1</span></p></td>
+                            <td><p><span>4-8</span></p></td>
+                            <td><p><span class="txt-green">в домике</span></p></td>
+                            <td><p><span class="txt-green">в домике</span></p></td>
+                            <td><p><span class="txt-green">в номере</span></p></td>
+                            <td><p><span class="txt-green"><i class="fa fa-lg fa-check"></i></span></p></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-
-
             </div>
-
-        </div>
-        <!-- End reservation -->
-
-<!-- End room -->
-
-</main>
-<!-- / main body -->
-
-</div>
-
-
+            <!-- End reservation -->
+            <!-- End room -->
+        </main>
+        <!-- / main body -->
+    </div>
 @endsection
-
