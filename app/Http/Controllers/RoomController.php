@@ -131,7 +131,8 @@ class RoomController extends Controller
             'sub_title' => 'required',
             'category_id' => 'required'
         ]);
-        $request['status'] = isset($request['status']) ?: 0;
+
+        $request['status'] = $request['status'] ?? 0;
 
         $room = Room::findOrFail($id);
         $room->update($request->except('_token'));

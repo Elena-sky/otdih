@@ -109,7 +109,6 @@ class MainController extends Controller
         return view('other.choice', compact('options'));
     }
 
-
     /**
      * AJAX the choice of rooms
      *
@@ -162,8 +161,9 @@ class MainController extends Controller
         $room['sub_title'] = explode(',', $room['sub_title']);
         $room['column_one'] = $this->stringToColumn($room['column_one']);
         $room['column_two'] = $this->stringToColumn($room['column_two']);
+        $pathToImg = config('app.imgPath.rooms');
 
-        return view('room', compact('room', 'options'));
+        return view('room', compact('room', 'options', 'pathToImg'));
     }
 
     /**
@@ -175,6 +175,9 @@ class MainController extends Controller
     private function stringToColumn($string)
     {
         $firstLevel = explode(':', $string);
+        if (count($firstLevel) === 1) {
+            return '';
+        }
         $secondLevel = explode(';', $firstLevel[1]);
 
         $html = "<h4> " . ltrim($firstLevel[0]) . "</h4>";
@@ -184,20 +187,19 @@ class MainController extends Controller
             if (strpos($item, ',')) {
                 $thirdLevel = explode(',', $item);
 
-                $html = $html . "<li><span class=\"fa fa-check-square-o\"></span> " . ltrim($thirdLevel[0]) . "<ul class=\"li-2-level\">";
+                $html .= "<li><span class=\"fa fa-check-square-o\"></span> " . ltrim($thirdLevel[0]) . "<ul class=\"li-2-level\">";
 
-                foreach ($thirdLevel as $key => $item) {
-                    $html = ($key == 0) ? $html . "" : $html . "<li>• " . ltrim($item) . "</li>";
+                foreach ($thirdLevel as $key => $thirdItem) {
+                    $html .= ($key === 0) ? '' : "<li>• " . ltrim($thirdItem) . "</li>";
                 }
 
-                $html = $html . "</ul></li>";
-
+                $html .= "</ul></li>";
             } else {
-                $html = $html . "<li><span class=\"fa fa-check-square-o\"></span> " . ltrim($item) . "</li>";
+                $html .= "<li><span class=\"fa fa-check-square-o\"></span> " . ltrim($item) . "</li>";
             }
         }
 
-        $html = $html . "</ul></nav>";
+        $html .= "</ul></nav>";
 
         return $html;
     }

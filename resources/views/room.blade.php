@@ -4,11 +4,11 @@
         <main class="hoc container clear">
             <!-- main body -->
             <!-- Navigation -->
-            @include('parts.navigation', [
-                'categories' => $options['categories'],
-                'rooms' => $options['rooms']
-            ])
-            <!-- End navigation -->
+        @include('parts.navigation', [
+            'categories' => $options['categories'],
+            'rooms' => $options['rooms']
+        ])
+        <!-- End navigation -->
             <!-- Room -->
             <div class="content three_quarter">
                 <div class="btmspace-50 center">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <p>{{$room['floor']}}</p>
-                <p>{{$room['description']}}</p>
+                <p>{!! $room['description'] !!}</p>
                 <!-- Description -->
                 <div class="col-sm-12 row">
                     <div class="col-sm-6">
@@ -36,18 +36,13 @@
                 <!-- Gallery -->
                 <div class="col-md-12 row">
                     <hr>
-                    <div class="gal">
-                        <img src="{{ asset("images/rooms/standard/1.jpg") }}" alt="">
-                        <img src="{{ asset("images/rooms/standard/2.jpg") }}" alt="">
-                        <img src="{{ asset("images/rooms/standard/3.jpg") }}" alt="">
-                        <img src="{{ asset("images/rooms/standard/5.jpg") }}" alt="">
-                        <img src="{{ asset("images/rooms/lu-st/11.jpg") }}" alt="">
-                        <img src="{{ asset("images/rooms/standard/6.jpg") }}" alt="">
-                        <img src="{{ asset("images/rooms/standard/7.jpg") }}" alt="">
-                        <img src="{{ asset("images/rooms/lu-st/4.jpg") }}" alt="">
-                        <img src="{{ asset("images/rooms/lu-st/8.jpg") }}" alt="">
-                        <img src="{{ asset("images/rooms/lu-st/9.jpg") }}" alt="">
-                        <img src="{{ asset("images/rooms/lu-st/10.jpg") }}" alt="">
+                    <div id="gallery" style="display:none;">
+                        @foreach($room->images as $img)
+                            <img alt="Preview Image 1"
+                                 src="{{ asset($pathToImg . $img['image_name']) }}"
+                                 data-image="{{ asset($pathToImg . $img['image_name']) }}"
+                                    {{--data-description="Image Description"--}}>
+                        @endforeach
                     </div>
                 </div>
                 <!-- End gallery -->

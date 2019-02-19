@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -7,40 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Otdih</title>
-
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
     <!-- Styles -->
-
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="{{ asset("css/layout.css") }}" rel="stylesheet" type="text/css" media="all">
-
     <link rel="stylesheet" href="{{ asset("css/font-awesome/css/font-awesome.min.css") }}">
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118064580-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
-
         gtag('config', 'UA-118064580-1');
     </script>
-
-
 </head>
 <body id="top">
-
 <div class="wrapper row0">
     <div id="topbar" class="hoc clear">
         <!-- ################################################################################################ -->
         <div class="fl_left">
             <ul class="nospace">
                 @foreach($options['phones'] as $phone)
-                    <li><a href="tel:{{$phone['telephone_call']}}"><i class="fa fa-phone"></i> {{$phone['phone']}}</a></li>
+                    <li><a href="tel:{{$phone['telephone_call']}}"><i class="fa fa-phone"></i> {{$phone['phone']}}</a>
+                    </li>
                 @endforeach
                 @foreach($options['viber'] as $viber)
                     <li><a href="tel:{{$phone['telephone_call']}}">Viber: {{ $viber['phone'] }}</a></li>
@@ -57,7 +50,6 @@
         <!-- ################################################################################################ -->
     </div>
 </div>
-
 <!-- Top Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url({{ asset("images/backgrounds/main.jpg") }});">
     <!--  -->
@@ -70,11 +62,11 @@
             <nav id="mainav" class="fl_right">
                 <ul class="clear">
                     <!-- Menu -->
-                    @include('parts.catalog', [
-                         'categories' => $options['categories'],
-                         'rooms' => $options['rooms']
-                    ])
-                    <!-- End menu -->
+                @include('parts.catalog', [
+                     'categories' => $options['categories'],
+                     'rooms' => $options['rooms']
+                ])
+                <!-- End menu -->
                     <li><a href="{{ route('reservation') }}">Бронирование</a></li>
                 </ul>
             </nav>
@@ -82,7 +74,7 @@
         </header>
     </div>
     <!-- -->
-     <div id="pageintro" class="hoc clear">
+    <div id="pageintro" class="hoc clear">
         <!-- -->
         <div class="flexslider basicslider">
             <ul class="slides">
@@ -115,10 +107,7 @@
 </div>
 <!-- End Top Background Image Wrapper -->
 <!-- -->
-
-
 @yield('content')
-
 <!-- Footer Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url({{ asset("images/backgrounds/footer.jpg") }});">
     <!-- -->
@@ -127,14 +116,16 @@
             <!-- -->
             <div class="btmspace-50 center">
                 <h2 class="heading">Жилье у моря в Одессе</h2>
-                <p>Наше месторасположение позволяет отдохнуть от городской суеты. Свежий морской воздух благоприятно влияет на здоровье. Замечательные места для вечерних прогулок. К морю 350м (5 минут пройти).</p>
+                <p>Наше месторасположение позволяет отдохнуть от городской суеты. Свежий морской воздух благоприятно
+                    влияет на здоровье. Замечательные места для вечерних прогулок. К морю 350м (5 минут пройти).</p>
             </div>
             <ul class="nospace group">
                 <li class="one_quarter first">
                     <div class="infobox"><i class="fa fa-phone"></i>
                         <ul class="nospace">
                             @foreach($options['phones'] as $phone)
-                                <li><a href="tel:{{$phone['telephone_call']}}"><i class="fa fa-phone"></i> {{$phone['phone']}}</a></li>
+                                <li><a href="tel:{{$phone['telephone_call']}}"><i
+                                                class="fa fa-phone"></i> {{$phone['phone']}}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -143,7 +134,8 @@
                     <div class="infobox"><i class="fa fa-pencil-square-o"></i>
                         <ul class="nospace">
                             @foreach($options['viber'] as $viber)
-                                <li><a href="tel:{{$phone['telephone_call']}}">Viber: <br> {{ $viber['phone'] }}</a></li>
+                                <li><a href="tel:{{$phone['telephone_call']}}">Viber: <br> {{ $viber['phone'] }}</a>
+                                </li>
                             @endforeach
                         </ul>
                     </div>
@@ -179,9 +171,6 @@
         </ul>
     </nav>
     <!--  -->
-
-
-
     <div class="wrapper row5">
         <div id="copyright" class="hoc clear">
             <!--  -->
@@ -190,10 +179,8 @@
             <!--  -->
         </div>
     </div>
-
 </div>
 <!-- End Footer Background Image Wrapper -->
-
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script src="{{ asset("js/jquery.min.js") }}"></script>
@@ -201,10 +188,35 @@
 <script src="{{ asset("js/jquery.mobilemenu.js") }}"></script>
 <script src="{{ asset("js/jquery.flexslider-min.js") }}"></script>
 <script src="{{ asset("js/choice.js") }}"></script>
-
-
+<script type='text/javascript' src='{{ asset("gallery/js/jquery-11.0.min.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-common-libraries.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-functions.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-thumbsgeneral.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-thumbsstrip.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-touchthumbs.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-panelsbase.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-strippanel.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-gridpanel.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-thumbsgrid.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-tiles.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-tiledesign.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-avia.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-slider.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-sliderassets.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-touchslider.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-zoomslider.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-video.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-gallery.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-lightbox.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-carousel.js") }}'></script>
+<script type='text/javascript' src='{{ asset("gallery/js/ug-api.js") }}'></script>
+<link rel='stylesheet' href='{{ asset("gallery/css/unite-gallery.css") }}' type='text/css'/>
+<script type='text/javascript' src='{{ asset("gallery/themes/default/ug-theme-default.js") }}'></script>
+<link rel='stylesheet' href='{{ asset("gallery/themes/default/ug-theme-default.css") }}' type='text/css'/>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("#gallery").unitegallery();
+    });
+</script>
 </body>
 </html>
-
-
-

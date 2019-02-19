@@ -1,7 +1,5 @@
 @extends('template')
-
 @section('content')
-
 
     <div class="wrapper row3">
         <main class="hoc container clear">
@@ -27,10 +25,10 @@
         <article class="hoc container clear">
             <!-- -->
             <div class="three_quarter first">
-                <h6 class="nospace">Подобрать номер</h6>
-                <p class="nospace">Мы можем помочь вам подобрать наиболее подходящий номер</p>
+                <h6 class="nospace">Сравнить номера</h6>
+                <p class="nospace">Выбрать номер легко и быстро! </p>
             </div>
-            <footer class="one_quarter"><a class="btn" href="{{ route('choicePage') }}">Детальнее &raquo;</a></footer>
+            <footer class="one_quarter"><a class="btn" href="{{ route('choicePage') }}">Сравнить &raquo;</a></footer>
             <!-- -->
         </article>
     </div>
