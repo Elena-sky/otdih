@@ -36,6 +36,7 @@
                 <!-- Gallery -->
                 <div class="col-md-12 row">
                     <hr>
+                    @if(count($room->images))
                     <div id="gallery" style="display:none;">
                         @foreach($room->images as $img)
                             <img alt="Preview Image 1"
@@ -44,6 +45,7 @@
                                     {{--data-description="Image Description"--}}>
                         @endforeach
                     </div>
+                    @endif
                 </div>
                 <!-- End gallery -->
             </div>
