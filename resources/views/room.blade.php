@@ -36,13 +36,13 @@
                 <!-- Gallery -->
                 <div class="col-md-12 row">
                     <hr>
-                    @if(count($room->images))
+                    @if(count($images))
                     <div id="gallery" style="display:none;">
-                        @foreach($room->images as $img)
+                        @foreach($images as $img)
                             <img alt="Preview Image 1"
-                                 src="{{ asset($pathToImg . $img['image_name']) }}"
-                                 data-image="{{ asset($pathToImg . $img['image_name']) }}"
-                                    {{--data-description="Image Description"--}}>
+                                 src="{{ $img['link'] }}"
+                                 data-image="{{ $img['link'] }}"
+                                 data-description="{{ $img['description'] }}">
                         @endforeach
                     </div>
                     @endif

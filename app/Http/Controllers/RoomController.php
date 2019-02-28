@@ -69,7 +69,7 @@ class RoomController extends Controller
 
         $room = Room::create($request->except('_token'));
         $path = config('app.imgPath.rooms');
-        $imagesName = self::upload($request, $path);
+        $imagesName = self::uploadToDropboxFile($request, $path);
 
         if (!empty($imagesName)) {
             foreach ($imagesName as $oneImg) {
@@ -110,10 +110,18 @@ class RoomController extends Controller
     {
         $categories = Category::all();
         $room = Room::find($id);
+        $images = self::getUrlLogo($room->images);
         $exampleTxt = $this->exampleTxt;
         $example = '';
 
-        return view('admin.rooms.edit', compact('room', 'categories', 'example', 'exampleTxt'));
+        return view('admin.rooms.edit', compact(
+            'room',
+            'categories',
+            'example',
+            'exampleTxt',
+            'img',
+            'images'
+        ));
     }
 
     /**
@@ -138,7 +146,7 @@ class RoomController extends Controller
         $room->update($request->except('_token'));
 
         $path = config('app.imgPath.rooms');
-        $imagesName = self::upload($request, $path);
+        $imagesName = self::uploadToDropboxFile($request, $path);
 
         if (!empty($imagesName)) {
             foreach ($imagesName as $oneImg) {
@@ -153,6 +161,16 @@ class RoomController extends Controller
             Image::insert($dataImages);
         }
 
+        $key = 'description_img_id_';
+        $len = strlen($key);
+        foreach ($request->all() as $inputName => $value) {
+            $pos = strpos($inputName, $key);
+            if ($pos !== false) {
+                $id = substr($inputName, $len);
+                $img = Image::find($id);
+                $img->update(['description' => $value]);
+            }
+        }
 
         //Display a successful message
         return redirect()->route('room::index')
@@ -176,6 +194,23 @@ class RoomController extends Controller
             ->with('status', 'Номер - ' . $roomName . ' удален');
     }
 
+//    /**
+//     *  Ajax destroy image
+//     */
+//    public function destroyImg()
+//    {
+//        $data = $_POST;
+//
+//        $imgDelete = Image::find($data['imgId']);
+//        $path = public_path() . config('app.imgPath.rooms') . $imgDelete->image_name;
+//
+//        if (file_exists($path)) {
+//            unlink($path);
+//        }
+//
+//        $imgDelete->delete();
+//    }
+
     /**
      *  Ajax destroy image
      */
@@ -184,12 +219,9 @@ class RoomController extends Controller
         $data = $_POST;
 
         $imgDelete = Image::find($data['imgId']);
-        $path = public_path() . config('app.imgPath.rooms') . $imgDelete->image_name;
-
-        if (file_exists($path)) {
-            unlink($path);
-        }
+        self::destroyFileFromDropbox($imgDelete->image_name);
 
         $imgDelete->delete();
     }
+
 }

@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+    'cloud' => env('FILESYSTEM_CLOUD', 'dropbox'),
 
     /*
     |--------------------------------------------------------------------------
@@ -61,6 +61,12 @@ return [
             'secret' => env('AWS_SECRET_ACCESS_KEY'),
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
+        ],
+
+        'dropbox' => [
+            'driver' => 'dropbox',
+            'token' => env('DROPBOX_TOKEN'),
+            'app' => env('YOUR_APP_NAME')
         ],
 
     ],

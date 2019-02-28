@@ -6,11 +6,12 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
-        "fideloper/proxy": "~3.3",
+        "fideloper/proxy": "~4.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
-        "orangehill/iseed": "dev-master"
+        "orangehill/iseed": "dev-master",
+        "spatie/flysystem-dropbox": "^1.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

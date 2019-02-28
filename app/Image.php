@@ -11,6 +11,7 @@ class Image extends Model
     protected $fillable = [
         'id',
         'image_name',
-        'room_id'
+        'room_id',
+        'description'
     ];
 }

@@ -6,13 +6,15 @@ use App\Category;
 use App\Mail;
 use App\Room;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
 use App\ContactPhones;
+use App\ImageUploader;
 
 
 class MainController extends Controller
 {
+    use ImageUploader;
+
     private $options = [];
 
 
@@ -161,9 +163,9 @@ class MainController extends Controller
         $room['sub_title'] = explode(',', $room['sub_title']);
         $room['column_one'] = $this->stringToColumn($room['column_one']);
         $room['column_two'] = $this->stringToColumn($room['column_two']);
-        $pathToImg = config('app.imgPath.rooms');
+        $images = self::getUrlLogo($room->images);
 
-        return view('room', compact('room', 'options', 'pathToImg'));
+        return view('room', compact('room', 'options', 'pathToImg', 'images'));
     }
 
     /**

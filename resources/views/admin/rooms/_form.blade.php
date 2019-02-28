@@ -88,13 +88,14 @@
             {!! Form::label('currentImage', 'Текущие изобращения') !!}
             <div class="col-sm-12">
                 <div class="row">
-                    @if(isset($room->images) && count($room->images) > 0)
-                        @foreach($room->images as $image )
-                            <div class="contentImg clossable" id="Image{{$image->id}}">
-                                <div class="close" data-img-id="{{$image->id}}" data-token="{{ csrf_token() }}"
+                    @if(isset($images) && count($images) > 0)
+                        @foreach($images as $image )
+                            <div class="contentImg clossable col-sm-4" id="Image{{$image['id']}}">
+                                <div class="close" data-img-id="{{$image['id']}}" data-token="{{ csrf_token() }}"
                                      data-url="{{ route('room::destroyImg') }}"><i class="fa fa-trash"></i></div>
-                                <img id="pr-update" src="{{ asset( config('app.imgPath.rooms') . $image->image_name) }}"
-                                     alt="{{$image->id}}">
+                                <img id="pr-update" src="{{ $image['link'] }}" alt="{{$image['id']}}">
+                                {!! Form::text('description_img_id_'.$image['id'], $image['description'],
+                                ['class' => 'form-control', 'placeholder' => 'Описание верхней картинки']) !!}
                             </div>
                         @endforeach
                     @else
