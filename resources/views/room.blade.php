@@ -1,5 +1,15 @@
 @extends('template')
 @section('content')
+    <!-- Room -->
+    <style type="text/css">
+        @media screen and (min-width: 700px) {
+            .ga img:hover {
+                -webkit-transform: scale(2.5);
+                -ms-transform: scale(2.5);
+                transform: scale(2.5);
+            }
+        }
+    </style>
     <div class="wrapper row3">
         <main class="hoc container clear">
             <!-- main body -->
@@ -9,7 +19,6 @@
             'rooms' => $options['rooms']
         ])
         <!-- End navigation -->
-            <!-- Room -->
             <div class="content three_quarter">
                 <div class="btmspace-50 center">
                     <h2>{{$room['title']}}</h2>
@@ -37,19 +46,12 @@
                 <div class="col-md-12 row">
                     <hr>
                     @if(count($images))
-                        <!-- Gallery -->
-                            <div class="col-md-12 row">
-                                <hr>
-                                <div class="gal">
-
-                                    @foreach($images as $img)
-                                        <img alt="Preview Image 1"
-                                             src="{{ $img['link'] }}"
-                                             data-image="{{ $img['link'] }}"
-                                             data-description="{{ $img['description'] }}">
-                                    @endforeach
-                                </div>
-                            </div>
+                        <div class="gal ga">
+                            @foreach($images as $img)
+                                <img alt="{{ $img['description'] }}"
+                                     src="{{ $img['link'] }}">
+                            @endforeach
+                        </div>
                     @endif
                 </div>
                 <!-- End gallery -->
