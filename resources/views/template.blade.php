@@ -188,35 +188,5 @@
 <script src="{{ asset("js/jquery.mobilemenu.js") }}"></script>
 <script src="{{ asset("js/jquery.flexslider-min.js") }}"></script>
 <script src="{{ asset("js/choice.js") }}"></script>
-<script type='text/javascript' src='{{ asset("gallery/js/jquery-11.0.min.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-common-libraries.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-functions.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-thumbsgeneral.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-thumbsstrip.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-touchthumbs.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-panelsbase.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-strippanel.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-gridpanel.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-thumbsgrid.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-tiles.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-tiledesign.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-avia.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-slider.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-sliderassets.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-touchslider.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-zoomslider.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-video.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-gallery.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-lightbox.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-carousel.js") }}'></script>
-<script type='text/javascript' src='{{ asset("gallery/js/ug-api.js") }}'></script>
-<link rel='stylesheet' href='{{ asset("gallery/css/unite-gallery.css") }}' type='text/css'/>
-<script type='text/javascript' src='{{ asset("gallery/themes/default/ug-theme-default.js") }}'></script>
-<link rel='stylesheet' href='{{ asset("gallery/themes/default/ug-theme-default.css") }}' type='text/css'/>
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-        jQuery("#gallery").unitegallery();
-    });
-</script>
 </body>
 </html>

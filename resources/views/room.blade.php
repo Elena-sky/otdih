@@ -37,14 +37,19 @@
                 <div class="col-md-12 row">
                     <hr>
                     @if(count($images))
-                    <div id="gallery" style="display:none;">
-                        @foreach($images as $img)
-                            <img alt="Preview Image 1"
-                                 src="{{ $img['link'] }}"
-                                 data-image="{{ $img['link'] }}"
-                                 data-description="{{ $img['description'] }}">
-                        @endforeach
-                    </div>
+                        <!-- Gallery -->
+                            <div class="col-md-12 row">
+                                <hr>
+                                <div class="gal">
+
+                                    @foreach($images as $img)
+                                        <img alt="Preview Image 1"
+                                             src="{{ $img['link'] }}"
+                                             data-image="{{ $img['link'] }}"
+                                             data-description="{{ $img['description'] }}">
+                                    @endforeach
+                                </div>
+                            </div>
                     @endif
                 </div>
                 <!-- End gallery -->
