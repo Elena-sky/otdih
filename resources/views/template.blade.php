@@ -186,6 +186,5 @@
 <script src="{{ asset("js/jquery.backtotop.js") }}"></script>
 <script src="{{ asset("js/jquery.mobilemenu.js") }}"></script>
 <script src="{{ asset("js/jquery.flexslider-min.js") }}"></script>
-<script src="{{ asset("js/choice.js") }}"></script>
 </body>
 </html>

@@ -25,8 +25,6 @@ Route::post('/contacts/send', 'MainController@sendMail')->name('mailSend'); // �
 
 Route::get('/reservation', 'MainController@reservationPage')->name('reservation'); // бронирование
 
-Route::get('/house/{a}', 'HouseController@house')->name('houses'); // страница домика
-
 
 // Admin
 Auth::routes();
