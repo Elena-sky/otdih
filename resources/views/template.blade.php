@@ -175,7 +175,6 @@
         <div id="copyright" class="hoc clear">
             <!--  -->
             <p class="fl_left">Copyright &copy; 2018 - otdih.od.ua</p>
-            <p class="fl_right">Site by Alena Soroka</p>
             <!--  -->
         </div>
     </div>
