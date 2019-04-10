@@ -72,7 +72,7 @@
                             <div class="col-sm-6">
                                 <div class="">
                                     {!! Form::label('comment', 'Ваше сообщение') !!}
-                                    {!! Form::textarea('comment', '', ['placeholder' => 'Напшите что Вас инетерсует...','class' => 'form-control', 'required' => 'required']) !!}
+                                    {!! Form::textarea('comment', '', ['placeholder' => 'Напшите что Вас инетерсует...','class' => 'form-control', 'maxlength' => '256', 'required' => 'required']) !!}
                                 </div>
                             </div>
 
