@@ -180,6 +180,7 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         App\Providers\DropboxServiceProvider::class,
+        Telegram\Bot\Laravel\TelegramServiceProvider::class
     ],
 
     /*
@@ -230,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Telegram'  => Telegram\Bot\Laravel\Facades\Telegram::class
 
     ],
 

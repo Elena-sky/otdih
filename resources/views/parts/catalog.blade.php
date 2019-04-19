@@ -2,7 +2,7 @@
     @foreach($categories as $category)
         @if($category['name'] == 'Номера')
             {{--todo style--}}
-            <li><a class="drop" style="pointer-events: none;cursor: default;">{{$category['name']}}</a>
+            <li><a href="#" class="drop" style="pointer-events: none;cursor: default;">{{$category['name']}}</a>
                 <ul>
                     @foreach($category->rooms as $room)
                         <li><a href="{{ route('room', $room['id']) }}">{{$room['name']}}</a></li>
@@ -11,11 +11,11 @@
             </li>
         @endif
     @endforeach
-    <li><a class="drop" style="pointer-events: none;cursor: default;">Домики</a>
+    <li><a href="#" class="drop" style="pointer-events: none;cursor: default;">Домики</a>
         <ul>
             @foreach($categories as $category)
                 @if($category['name'] != 'Номера')
-                    <li><a style="pointer-events: none;cursor: default;">{{$category['name']}}</a>
+                    <li><a href="#" style="pointer-events: none;cursor: default;">{{$category['name']}}</a>
                         <ul>
                             @foreach($category->rooms as $room)
                                 <li><a href="{{ route('room', $room['id']) }}">{{$room['name']}}</a></li>

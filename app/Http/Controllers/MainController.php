@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\ContactPhones;
 use App\ImageUploader;
+use mysql_xdevapi\Exception;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 
 class MainController extends Controller
@@ -80,9 +82,48 @@ class MainController extends Controller
             'email' => 'email'
         ]);
 
-        Mail::create($request->except('_token'));
+        $data = $request->except('_token');
+        $this->sendMessageToTelegram($data);
+
+        Mail::create($data);
 
         return redirect()->back()->with('message', 'Письмо отправлено!');
+    }
+
+    private function sendMessageToTelegram($data)
+    {
+        $message = '';
+        $example = '%s: %s;' . PHP_EOL;
+        $message .= sprintf($example, 'дата', $this->getDate());
+
+        foreach ($data as $key => $value) {
+            $message .= sprintf($example, $key, $value);
+        }
+
+        try {
+            Telegram::sendMessage([
+                'chat_id' => env('TELEGRAM_USER_ID1', ''),
+                'text' => $message
+            ]);
+
+            Telegram::sendMessage([
+                'chat_id' => env('TELEGRAM_USER_ID2', ''),
+                'text' => $message
+            ]);
+        } catch (Exception $e) {
+            Telegram::sendMessage([
+                'chat_id' => env('TELEGRAM_USER_ID2', ''),
+                'text' => "ошибка отправки сообщения:" . $e
+            ]);
+        }
+
+    }
+
+    private function getDate()
+    {
+        $date = new \DateTime('now', new \DateTimeZone('Europe/Kiev'));
+
+        return $date->format('Y-m-d H:i:s');
     }
 
 
