@@ -21,7 +21,7 @@ Route::get('/choice', 'MainController@choice')->name('choicePage');
 
 Route::post('/choice/answer', 'MainController@answer');
 
-Route::post('/contacts/send', 'MainController@sendMail')->name('mailSend'); // письма
+Route::post('/contacts/send', 'MainController@sendMail')->name('mailSend');  // письма
 
 Route::get('/reservation', 'MainController@reservationPage')->name('reservation'); // бронирование
 
